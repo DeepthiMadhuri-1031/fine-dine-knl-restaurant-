@@ -1,0 +1,898 @@
+[
+  {
+    "id": "sig-hyd-biryani",
+    "itemNumber": 126,
+    "name": "Hyderabad Veg Biryani",
+    "category": "Biryani (Basmati Rice)",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 140
+      },
+      {
+        "label": "Edition 2",
+        "price": 170
+      },
+      {
+        "label": "Edition 3 (Revised)",
+        "price": 180
+      }
+    ],
+    "conflictReason": "Conflicting printed prices detected across uploaded menu revisions (₹140 vs ₹170 vs ₹180). Held for owner verification.",
+    "description": "Long-grain basmati layered with garden vegetables, saffron, mint and golden onions, slow-cooked dum style. Served with mirchi ka salan and cooling raita.",
+    "isVeg": true,
+    "featured": true,
+    "bestseller": true,
+    "imageUrl": "/images/dishes/hyderabad-veg-biryani-hq.webp",
+    "altText": "Authentic Hyderabadi Dum Veg Biryani served in a bronze handi with salan and raita",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-12"
+  },
+  {
+    "id": "sig-knl-biryani",
+    "itemNumber": 125,
+    "name": "KNL Special Veg Biryani",
+    "category": "Biryani (Basmati Rice)",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 180
+      },
+      {
+        "label": "Edition 2",
+        "price": 200
+      },
+      {
+        "label": "Edition 3 (Revised)",
+        "price": 210
+      }
+    ],
+    "conflictReason": "Menu editions show conflicting prices (₹180 vs ₹200 vs ₹210). Pending owner confirmation.",
+    "description": "The house specialty biryani — aromatic basmati rice tossed with roasted cashew nuts, paneer cubes and button mushrooms, infused with royal Kurnool spices.",
+    "isVeg": true,
+    "featured": true,
+    "bestseller": true,
+    "imageUrl": "/images/dishes/knl-special-veg-biryani-hq.webp",
+    "altText": "KNL Special Veg Biryani with roasted cashew nuts, paneer, and mushrooms",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-12"
+  },
+  {
+    "id": "sig-paneer-65",
+    "itemNumber": 35,
+    "name": "Paneer 65",
+    "category": "Paneer Dry Starters",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Standard Print",
+        "price": 190
+      },
+      {
+        "label": "Revised Edition",
+        "price": 210
+      }
+    ],
+    "conflictReason": "Discrepancy detected between standard print (₹190) and revised price stickers (₹210). Pending owner sign-off.",
+    "description": "Crisp, fiery paneer bites tossed with tempered curry leaves, fresh green chillies and crushed garlic — an authentic South Indian favorite.",
+    "isVeg": true,
+    "featured": true,
+    "bestseller": true,
+    "imageUrl": "/images/dishes/paneer-65-hq.webp",
+    "altText": "Crispy red spiced Paneer 65 appetizer with curry leaves and green chillies",
+    "spicyLevel": "Spicy",
+    "menuPageId": "page-2"
+  },
+  {
+    "id": "sig-bagara-paneer",
+    "itemNumber": 90,
+    "name": "Bagara Paneer",
+    "category": "Paneer Curries",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Early Print",
+        "price": 220
+      },
+      {
+        "label": "Intermediate Print",
+        "price": 250
+      },
+      {
+        "label": "Revised Sticker Edition",
+        "price": 280
+      }
+    ],
+    "conflictReason": "Three distinct price listings exist across menu photographs (₹220, ₹250, and ₹280 stickered). Kept unfinalized for verification.",
+    "description": "Soft fresh paneer simmered in a velvety, tangy Andhra-style gravy crafted with roasted peanuts, toasted sesame, tamarind and royal spices.",
+    "isVeg": true,
+    "featured": true,
+    "bestseller": true,
+    "imageUrl": "/images/dishes/bagara-paneer-hq.webp",
+    "altText": "Bagara Paneer curry in velvety peanut and sesame gravy in a copper kadai",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-7"
+  },
+  {
+    "id": "biryani-spl-hyd",
+    "itemNumber": 131,
+    "name": "Spl Hyderabadi Biryani",
+    "category": "Biryani (Basmati Rice)",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 200
+      },
+      {
+        "label": "Edition 2",
+        "price": 240
+      },
+      {
+        "label": "Revised Edition",
+        "price": 260
+      }
+    ],
+    "conflictReason": "Menu conflict: ₹200 vs ₹240 vs ₹260 across pages.",
+    "description": "Chef's signature basmati dum preparation with saffron essence, fried nuts, and seasonal vegetables.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/spl-hyderabad-biryani.webp",
+    "altText": "Special Hyderabadi Basmati Dum Biryani garnished with brown onions",
+    "spicyLevel": "Spicy",
+    "menuPageId": "page-12"
+  },
+  {
+    "id": "biryani-paneer",
+    "itemNumber": 128,
+    "name": "Paneer Biryani",
+    "category": "Biryani (Basmati Rice)",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Early Print",
+        "price": 180
+      },
+      {
+        "label": "Intermediate Print",
+        "price": 210
+      },
+      {
+        "label": "Revised Edition",
+        "price": 250
+      }
+    ],
+    "conflictReason": "Conflicting prices: ₹180 / ₹210 / ₹250.",
+    "description": "Marinated tender paneer cubes layered with spiced basmati rice and fresh mint.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/paneer-biryani.webp",
+    "altText": "Fragrant Paneer Biryani with marinated paneer cubes and saffron basmati rice",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-12"
+  },
+  {
+    "id": "biryani-kaju",
+    "itemNumber": 129,
+    "name": "Kaju Biryani",
+    "category": "Biryani (Basmati Rice)",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Early Print",
+        "price": 180
+      },
+      {
+        "label": "Intermediate",
+        "price": 220
+      },
+      {
+        "label": "Revised Edition",
+        "price": 250
+      }
+    ],
+    "conflictReason": "Conflicting prices: ₹180 / ₹220 / ₹250.",
+    "description": "Golden roasted cashew nuts tossed with fragrant long grain basmati and aromatic spices.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/kaju-biryani.webp",
+    "altText": "Kaju Biryani loaded with whole roasted cashew nuts and basmati rice",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-12"
+  },
+  {
+    "id": "biryani-kaju-paneer",
+    "itemNumber": 127,
+    "name": "Kaju Paneer Biryani",
+    "category": "Biryani (Basmati Rice)",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 2",
+        "price": 240
+      },
+      {
+        "label": "Revised Edition",
+        "price": 260
+      }
+    ],
+    "conflictReason": "Price variation between ₹240 and ₹260.",
+    "description": "Generous combination of rich cashew nuts and succulent malai paneer layered with basmati dum rice.",
+    "isVeg": true,
+    "bestseller": true,
+    "imageUrl": "/images/dishes/kaju-paneer-biryani.webp",
+    "altText": "Kaju Paneer Biryani with golden cashews and malai paneer cubes",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-12"
+  },
+  {
+    "id": "biryani-mushroom",
+    "itemNumber": 130,
+    "name": "Mushroom Biryani",
+    "category": "Biryani (Basmati Rice)",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 170
+      },
+      {
+        "label": "Edition 2",
+        "price": 210
+      },
+      {
+        "label": "Revised Edition",
+        "price": 240
+      }
+    ],
+    "conflictReason": "Price discrepancy: ₹170 vs ₹210 vs ₹240.",
+    "description": "Tender button mushrooms cooked with caramelised onions, fresh herbs and basmati rice.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/mushroom-biryani.webp",
+    "altText": "Mushroom Biryani with spiced button mushrooms and fragrant basmati rice",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-12"
+  },
+  {
+    "id": "paneer-butter-masala",
+    "itemNumber": 71,
+    "name": "Paneer Butter Masala",
+    "category": "Paneer Curries",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 160
+      },
+      {
+        "label": "Edition 2",
+        "price": 190
+      },
+      {
+        "label": "Revised Edition",
+        "price": 210
+      }
+    ],
+    "conflictReason": "Price conflict: ₹160 vs ₹190 vs ₹210.",
+    "description": "Paneer cubes in a silky, mildly sweet and rich tomato-butter sauce garnished with cream.",
+    "isVeg": true,
+    "bestseller": true,
+    "imageUrl": "/images/dishes/paneer-butter-masala.webp",
+    "altText": "Paneer Butter Masala in rich makhani gravy with cream swirls in a copper handi",
+    "spicyLevel": "Mild",
+    "menuPageId": "page-7"
+  },
+  {
+    "id": "palak-paneer",
+    "itemNumber": 70,
+    "name": "Palak Paneer",
+    "category": "Paneer Curries",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 160
+      },
+      {
+        "label": "Edition 2",
+        "price": 180
+      },
+      {
+        "label": "Revised Edition",
+        "price": 210
+      }
+    ],
+    "conflictReason": "Price conflict: ₹160 vs ₹180 vs ₹210.",
+    "description": "Fresh cottage cheese cubes cooked in a vibrant spiced spinach gravy with ginger and garlic.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/palak-paneer.webp",
+    "altText": "Palak Paneer with fresh paneer cubes in vibrant spiced green spinach puree",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-7"
+  },
+  {
+    "id": "kadai-paneer",
+    "itemNumber": 76,
+    "name": "Kadai Paneer",
+    "category": "Paneer Curries",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 180
+      },
+      {
+        "label": "Edition 2",
+        "price": 210
+      },
+      {
+        "label": "Revised Edition",
+        "price": 230
+      }
+    ],
+    "conflictReason": "Price conflict: ₹180 vs ₹210 vs ₹230.",
+    "description": "Paneer batons stir-fried with bell peppers, onions and freshly ground kadai coriander-cumin masala.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/kadai-paneer.webp",
+    "altText": "Kadai Paneer stir-fried with capsicum, onions, and freshly ground kadai spices",
+    "spicyLevel": "Spicy",
+    "menuPageId": "page-7"
+  },
+  {
+    "id": "paneer-tikka-masala",
+    "itemNumber": 74,
+    "name": "Paneer Tikka Masala",
+    "category": "Paneer Curries",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 180
+      },
+      {
+        "label": "Edition 2",
+        "price": 200
+      },
+      {
+        "label": "Revised Edition",
+        "price": 220
+      }
+    ],
+    "conflictReason": "Price conflict: ₹180 vs ₹200 vs ₹220.",
+    "description": "Tandoor roasted paneer cooked in a rich, tangy onion-tomato gravy with bell peppers.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/paneer-tikka-masala.webp",
+    "altText": "Paneer Tikka Masala with charred tandoori paneer in spiced tomato gravy",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-7"
+  },
+  {
+    "id": "spl-knl-paneer",
+    "itemNumber": 84,
+    "name": "Spl KNL Paneer",
+    "category": "Paneer Curries",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Early Print",
+        "price": 220
+      },
+      {
+        "label": "Intermediate",
+        "price": 250
+      },
+      {
+        "label": "Revised Sticker",
+        "price": 280
+      }
+    ],
+    "conflictReason": "Price variation: ₹220 vs ₹250 vs ₹280.",
+    "description": "Kurnool special chef's secret recipe curry made with paneer and rich royal spices.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/spl-knl-paneer.webp",
+    "altText": "Special KNL Paneer curry crafted with chef secret spices",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-7"
+  },
+  {
+    "id": "dal-tadka",
+    "itemNumber": 46,
+    "name": "Dal Tadka",
+    "category": "Vegetable Curries",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 140
+      },
+      {
+        "label": "Revised Edition",
+        "price": 180
+      }
+    ],
+    "conflictReason": "Price conflict: ₹140 vs ₹180.",
+    "description": "Yellow lentils slow simmered and tempered with hot desi ghee, cumin seeds, garlic and dry red chillies.",
+    "isVeg": true,
+    "bestseller": true,
+    "imageUrl": "/images/dishes/dal-tadka-hq.webp",
+    "altText": "Steaming yellow Dal Tadka with sizzling ghee tempering of dried red chillies and cumin",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-7"
+  },
+  {
+    "id": "dal-fry",
+    "itemNumber": 45,
+    "name": "Dal Fry",
+    "category": "Vegetable Curries",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 120
+      },
+      {
+        "label": "Revised Edition",
+        "price": 160
+      }
+    ],
+    "conflictReason": "Price conflict: ₹120 vs ₹160.",
+    "description": "Homestyle yellow dal cooked with onions, tomatoes and fragrant Indian spices.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/dal-fry.webp",
+    "altText": "Homestyle Dal Fry in a brass bowl with tempered garlic and fresh coriander",
+    "spicyLevel": "Mild",
+    "menuPageId": "page-7"
+  },
+  {
+    "id": "rayalaseema-veg-curry",
+    "itemNumber": 44,
+    "name": "RayalaSeema Veg Curry",
+    "category": "Vegetable Curries",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 160
+      },
+      {
+        "label": "Revised Edition",
+        "price": 180
+      }
+    ],
+    "conflictReason": "Price conflict: ₹160 vs ₹180.",
+    "description": "Fiery regional Kurnool specialty curry cooked with garden vegetables and rustic Rayalaseema spices.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/rayalaseema-veg-curry.webp",
+    "altText": "Fiery red Rayalaseema Vegetable Curry in a traditional earthen clay pot",
+    "spicyLevel": "Spicy",
+    "menuPageId": "page-2"
+  },
+  {
+    "id": "mix-vegetable",
+    "itemNumber": 43,
+    "name": "Mix Vegetable Curry",
+    "category": "Vegetable Curries",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 150
+      },
+      {
+        "label": "Revised Edition",
+        "price": 170
+      }
+    ],
+    "conflictReason": "Price conflict: ₹150 vs ₹170.",
+    "description": "Seasonal medley of carrots, green beans, peas and potatoes cooked in an onion-tomato gravy.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/mix-veg-curry.webp",
+    "altText": "Mixed Vegetable Curry with carrots, beans, peas and potatoes in rich gravy",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-2"
+  },
+  {
+    "id": "kaju-paneer-curry",
+    "itemNumber": 91,
+    "name": "Kaju Paneer Curry",
+    "category": "Paneer Curries",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 190
+      },
+      {
+        "label": "Revised Edition",
+        "price": 260
+      }
+    ],
+    "conflictReason": "Price conflict: ₹190 vs ₹260.",
+    "description": "Crisp cashews and paneer in an indulgent cashew nut and cream based curry.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/kaju-curry.webp",
+    "altText": "Kaju Paneer Curry with golden roasted cashews and paneer in cashew cream gravy",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-12"
+  },
+  {
+    "id": "veg-spring-rolls",
+    "itemNumber": 19,
+    "name": "Veg Spring Rolls",
+    "category": "Vegetable Dry Starters",
+    "price": 160,
+    "priceConfirmed": true,
+    "description": "Crispy fried golden pastry rolls stuffed with shredded vegetables and seasoned noodles.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/veg-spring-rolls.webp",
+    "altText": "Crispy Veg Spring Rolls sliced diagonally with sweet chili dipping sauce",
+    "spicyLevel": "Mild",
+    "menuPageId": "page-1"
+  },
+  {
+    "id": "paneer-spring-rolls",
+    "itemNumber": 20,
+    "name": "Paneer Spring Rolls",
+    "category": "Vegetable Dry Starters",
+    "price": 180,
+    "priceConfirmed": true,
+    "description": "Crisp rolls filled with seasoned grated cottage cheese and fresh herbs.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/paneer-spring-rolls.webp",
+    "altText": "Crisp Paneer Spring Rolls stuffed with spiced grated paneer and herbs",
+    "spicyLevel": "Mild",
+    "menuPageId": "page-1"
+  },
+  {
+    "id": "french-fries",
+    "itemNumber": 21,
+    "name": "French Fries",
+    "category": "Vegetable Dry Starters",
+    "price": 130,
+    "priceConfirmed": true,
+    "description": "Golden crispy potato batons lightly salted and served with ketchup.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/french-fries.webp",
+    "altText": "Golden crispy French Fries in a serving basket with tomato ketchup",
+    "spicyLevel": "Mild",
+    "menuPageId": "page-1"
+  },
+  {
+    "id": "onion-pakoda",
+    "itemNumber": 9,
+    "name": "Onion Pakoda",
+    "category": "Vegetable Dry Starters",
+    "price": 150,
+    "priceConfirmed": true,
+    "description": "Crispy sliced onions coated in spiced gram flour batter and deep fried to golden crunch.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/onion-pakoda.webp",
+    "altText": "Crunchy golden Indian Onion Pakoda fritters with fried green chillies",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-1"
+  },
+  {
+    "id": "mushroom-65",
+    "itemNumber": 12,
+    "name": "Mushroom 65",
+    "category": "Vegetable Dry Starters",
+    "price": 230,
+    "priceConfirmed": true,
+    "description": "Crispy batter-fried button mushrooms tossed in hot South Indian spices, curry leaves and green chillies.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/mushroom-65.webp",
+    "altText": "Crispy fiery Mushroom 65 appetizer tossed with curry leaves and chillies",
+    "spicyLevel": "Spicy",
+    "menuPageId": "page-1"
+  },
+  {
+    "id": "baby-corn-manchurian",
+    "itemNumber": 17,
+    "name": "Baby Corn Manchurian",
+    "category": "Vegetable Dry Starters",
+    "price": 220,
+    "priceConfirmed": true,
+    "description": "Crunchy baby corn batons tossed in a savory garlic, soya and spring onion Indo-Chinese glaze.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/baby-corn-manchurian.webp",
+    "altText": "Crispy Baby Corn Manchurian in Indo-Chinese garlic soy sauce",
+    "spicyLevel": "Medium",
+    "menuPageId": "page-1"
+  },
+  {
+    "id": "butter-naan",
+    "itemNumber": 111,
+    "name": "Butter Naan",
+    "category": "Tandoori Naan & Roti",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 35
+      },
+      {
+        "label": "Revised Edition",
+        "price": 45
+      }
+    ],
+    "conflictReason": "Price conflict: ₹35 vs ₹45.",
+    "description": "Classic soft and blistered tandoori leavened flatbread brushed with rich melted butter.",
+    "isVeg": true,
+    "bestseller": true,
+    "imageUrl": "/images/dishes/butter-naan-hq.webp",
+    "altText": "Freshly baked Tandoori Butter Naan brushed with glistening melted butter in a basket",
+    "menuPageId": "page-12"
+  },
+  {
+    "id": "plain-naan",
+    "itemNumber": 110,
+    "name": "Plain Naan",
+    "category": "Tandoori Naan & Roti",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 30
+      },
+      {
+        "label": "Revised Edition",
+        "price": 40
+      }
+    ],
+    "conflictReason": "Price conflict: ₹30 vs ₹40.",
+    "description": "Traditional clay-oven baked soft wheat naan.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/plain-naan.webp",
+    "altText": "Traditional Indian Plain Naan flatbread baked in a clay tandoor",
+    "menuPageId": "page-12"
+  },
+  {
+    "id": "garlic-naan",
+    "itemNumber": 124,
+    "name": "Garlic Naan",
+    "category": "Tandoori Naan & Roti",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 60
+      },
+      {
+        "label": "Edition 2",
+        "price": 70
+      },
+      {
+        "label": "Revised Edition",
+        "price": 80
+      }
+    ],
+    "conflictReason": "Price conflict: ₹60 vs ₹70 vs ₹80.",
+    "description": "Tandoori naan topped with roasted minced garlic, fresh coriander and butter.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/garlic-naan.webp",
+    "altText": "Clay oven Garlic Naan topped with minced roasted garlic and butter",
+    "menuPageId": "page-12"
+  },
+  {
+    "id": "tandoori-roti",
+    "itemNumber": 104,
+    "name": "Tandoori Roti",
+    "category": "Tandoori Naan & Roti",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 25
+      },
+      {
+        "label": "Revised Edition",
+        "price": 30
+      }
+    ],
+    "conflictReason": "Price conflict: ₹25 vs ₹30.",
+    "description": "Whole wheat round flatbread baked fresh in the clay tandoor oven.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/tandoori-roti.webp",
+    "altText": "Charred whole wheat Tandoori Roti baked in a clay oven",
+    "menuPageId": "page-12"
+  },
+  {
+    "id": "knl-spl-fried-rice",
+    "itemNumber": 122,
+    "name": "Knl Spl Fried Rice",
+    "category": "Rice & Noodles",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 180
+      },
+      {
+        "label": "Revised Edition",
+        "price": 200
+      }
+    ],
+    "conflictReason": "Price conflict: ₹180 vs ₹200.",
+    "description": "Chef's specialty fried rice with vegetables, paneer cubes and crunchy cashews.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/knl-spl-fried-rice.webp",
+    "altText": "KNL Special Fried Rice with cashews, paneer cubes, and fresh vegetables",
+    "menuPageId": "page-17"
+  },
+  {
+    "id": "veg-fried-rice",
+    "itemNumber": 123,
+    "name": "Veg Fried Rice",
+    "category": "Rice & Noodles",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 140
+      },
+      {
+        "label": "Revised Edition",
+        "price": 160
+      }
+    ],
+    "conflictReason": "Price conflict: ₹140 vs ₹160.",
+    "description": "Stir-fried long grain rice with finely chopped carrots, beans, and spring onions.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/veg-fried-rice.webp",
+    "altText": "Wok tossed Vegetable Fried Rice with spring onions and diced vegetables",
+    "menuPageId": "page-17"
+  },
+  {
+    "id": "veg-noodles",
+    "itemNumber": 142,
+    "name": "Veg Noodles",
+    "category": "Rice & Noodles",
+    "price": null,
+    "priceConfirmed": false,
+    "priceVariants": [
+      {
+        "label": "Edition 1",
+        "price": 120
+      },
+      {
+        "label": "Revised Edition",
+        "price": 160
+      }
+    ],
+    "conflictReason": "Price conflict: ₹120 vs ₹160.",
+    "description": "Wok-tossed noodles with shredded cabbage, capsicum, carrots and Indo-Chinese sauces.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/veg-noodles.webp",
+    "altText": "Indo-Chinese Veg Hakka Noodles tossed with julienned vegetables",
+    "menuPageId": "page-17"
+  },
+  {
+    "id": "spl-curd-rice",
+    "itemNumber": 141,
+    "name": "Spl Curd Rice",
+    "category": "Rice & Noodles",
+    "price": 80,
+    "priceConfirmed": true,
+    "description": "Cooling tempered South Indian yogurt rice seasoned with mustard seeds, curry leaves, and ginger.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/spl-curd-rice.webp",
+    "altText": "South Indian Special Curd Rice with mustard and curry leaf tempering",
+    "menuPageId": "page-17"
+  },
+  {
+    "id": "bev-mint-mojito",
+    "itemNumber": 151,
+    "name": "Mint Mojito",
+    "category": "Beverages & Shakes",
+    "price": 80,
+    "priceConfirmed": true,
+    "description": "Refreshing sparkling mocktail muddled with garden mint, fresh lime juice and soda.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/mint-mojito.webp",
+    "altText": "Icy Mint Lemon Mojito mocktail garnished with fresh mint and lime slice",
+    "menuPageId": "page-16"
+  },
+  {
+    "id": "bev-blue-curacao",
+    "itemNumber": 153,
+    "name": "Blue Curacao Cooler",
+    "category": "Beverages & Shakes",
+    "price": 80,
+    "priceConfirmed": true,
+    "description": "Vibrant tropical citrus mocktail served chilled over crushed ice.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/blue-curacao.webp",
+    "altText": "Vibrant electric blue Blue Curacao mocktail served over crushed ice",
+    "menuPageId": "page-16"
+  },
+  {
+    "id": "bev-cold-coffee",
+    "itemNumber": 168,
+    "name": "Thick Cold Coffee",
+    "category": "Beverages & Shakes",
+    "price": 90,
+    "priceConfirmed": true,
+    "description": "Creamy whipped iced coffee topped with chocolate drizzle.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/cold-coffee.webp",
+    "altText": "Thick whipped cold coffee with chocolate drizzle in a tall glass",
+    "menuPageId": "page-18"
+  },
+  {
+    "id": "bev-mango-shake",
+    "itemNumber": 163,
+    "name": "Fresh Mango Shake",
+    "category": "Beverages & Shakes",
+    "price": 60,
+    "priceConfirmed": true,
+    "description": "Rich and luscious seasonal mango shake prepared with pure milk.",
+    "isVeg": true,
+    "bestseller": true,
+    "imageUrl": "/images/dishes/refreshing-beverages-hq.webp",
+    "altText": "Rich fresh Mango Shake with saffron strands in a chilled glassware",
+    "menuPageId": "page-18"
+  },
+  {
+    "id": "bev-watermelon-juice",
+    "itemNumber": 159,
+    "name": "Fresh Watermelon Juice",
+    "category": "Beverages & Shakes",
+    "price": 60,
+    "priceConfirmed": true,
+    "description": "100% natural cold pressed watermelon juice, freshly prepared to order.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/watermelon-juice.webp",
+    "altText": "Freshly pressed ruby red Watermelon Juice served with lime and mint",
+    "menuPageId": "page-18"
+  },
+  {
+    "id": "ice-cream-shake-vanilla",
+    "itemNumber": 183,
+    "name": "Vanilla Ice Cream Milk Shake",
+    "category": "Ice Creams",
+    "price": 80,
+    "priceConfirmed": true,
+    "description": "Thick hand-spun shake blended with gourmet vanilla ice cream.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/ice-cream-shake.webp",
+    "altText": "Thick Vanilla Ice Cream Milkshake with whipped cream",
+    "menuPageId": "page-19"
+  },
+  {
+    "id": "ice-cream-scoop-choco",
+    "itemNumber": 194,
+    "name": "Chocolate Ice Cream Scoop",
+    "category": "Ice Creams",
+    "price": 70,
+    "priceConfirmed": true,
+    "description": "Rich chocolate ice cream scoop served chilled in a dessert dish.",
+    "isVeg": true,
+    "imageUrl": "/images/dishes/ice-cream-scoop.webp",
+    "altText": "Scoop of rich chocolate ice cream served in a dessert glass",
+    "menuPageId": "page-19"
+  }
+]

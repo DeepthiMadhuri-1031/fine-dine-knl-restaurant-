@@ -1,0 +1,293 @@
+export interface MenuPage {
+  id: string;
+  pageNumber: number;
+  title: string;
+  subtitle: string;
+  categories: string[];
+  originalSrc: string;
+  enhancedSrc: string;
+  width: number;
+  height: number;
+  type: 'spread' | 'single';
+  edition: 'Stickered / Revised Edition' | 'Standard Print Edition' | 'Early Print Edition';
+  hasPriceConflictNotes?: string;
+  itemsPreview: string[];
+}
+
+export const MENU_PAGES: MenuPage[] = [
+  {
+    id: "page-1",
+    pageNumber: 1,
+    title: "Vegetable Dry Starters & Snacks",
+    subtitle: "Crispy appetizers, Indo-Chinese bites, and party platters",
+    categories: ["Vegetable Dry Items"],
+    originalSrc: "/images/menu/original/unnamed (12).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (12).webp",
+    width: 765,
+    height: 1020,
+    type: "single",
+    edition: "Standard Print Edition",
+    itemsPreview: ["Aloo 65 (₹160)", "Gobi Manchurian (₹160)", "Veg Manchurian (₹160)", "Veg Shangrilla (₹180)", "Mushroom 65 (₹230)", "Baby Corn Manchurian (₹220)", "Veg Spring Rolls (₹160)", "French Fries (₹130)"]
+  },
+  {
+    id: "page-2",
+    pageNumber: 2,
+    title: "Paneer Dry Starters & Vegetable Dhamaka Curries (Revised Edition)",
+    subtitle: "Specialty paneer appetizers and regional Andhra vegetable gravies",
+    categories: ["Paneer Dry Items", "Vegetable Dhamaka (Curry)"],
+    originalSrc: "/images/menu/original/unnamed (17).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (17).webp",
+    width: 765,
+    height: 1020,
+    type: "single",
+    edition: "Stickered / Revised Edition",
+    hasPriceConflictNotes: "Shows revised pricing: Paneer 65 at ₹210 (vs ₹190 in early print), Mix Vegetable at ₹170 (vs ₹150).",
+    itemsPreview: ["Paneer Manchurian (₹210)", "Paneer 65 (₹210)", "Apollo Paneer (₹220)", "Paneer Tikka Dry (₹240)", "Mix Vegetable (₹170)", "Rayalaseema Veg Curry (₹180)", "Veg Mandakini (₹200)"]
+  },
+  {
+    id: "page-3",
+    pageNumber: 3,
+    title: "Paneer Dry Items & Vegetable Dhamaka (Original Print)",
+    subtitle: "Original unadjusted print of the paneer starters and curries",
+    categories: ["Paneer Dry Items", "Vegetable Dhamaka (Curry)"],
+    originalSrc: "/images/menu/original/unnamed (8).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (8).webp",
+    width: 765,
+    height: 1020,
+    type: "single",
+    edition: "Standard Print Edition",
+    hasPriceConflictNotes: "Shows original pricing: Paneer 65 at ₹190, Mix Veg at ₹150.",
+    itemsPreview: ["Paneer Manchurian (₹190)", "Chilly Paneer (₹190)", "Paneer 65 (₹190)", "Paneer Stick (₹190)", "Mix Vegetable (₹150)", "Veg Jaipuri (₹160)"]
+  },
+  {
+    id: "page-4",
+    pageNumber: 4,
+    title: "Paneer Starters & Punjabi Curries (Two-Page Spread)",
+    subtitle: "Panoramic view of paneer dry starters and North Indian dals",
+    categories: ["Paneer Dry Items", "Vegetable Dhamaka", "Punjabi Curries"],
+    originalSrc: "/images/menu/original/unnamed (9).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (9).webp",
+    width: 1360,
+    height: 1020,
+    type: "spread",
+    edition: "Standard Print Edition",
+    itemsPreview: ["Paneer 65 (₹190)", "Dal Fry (₹120)", "Dal Tadka (₹140)", "Aloo Gobi Masala (₹140)", "Mushroom Curry (₹160)", "Baby Corn Masala (₹160)"]
+  },
+  {
+    id: "page-5",
+    pageNumber: 5,
+    title: "Paneer Dry Items & Dhamaka (Detail View)",
+    subtitle: "Detailed portrait shot of starters and vegetable curry selections",
+    categories: ["Paneer Dry Items", "Vegetable Dhamaka"],
+    originalSrc: "/images/menu/original/unnamed (10).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (10).webp",
+    width: 765,
+    height: 1020,
+    type: "single",
+    edition: "Standard Print Edition",
+    itemsPreview: ["Chilly Paneer", "Paneer 99", "Apollo Paneer", "Rayalaseema Veg Curry", "Veg Methi"]
+  },
+  {
+    id: "page-6",
+    pageNumber: 6,
+    title: "Punjabi Curries (Single Page)",
+    subtitle: "Hearty North Indian curries, homestyle dals, and seasonal vegetables",
+    categories: ["Punjabi Curries"],
+    originalSrc: "/images/menu/original/unnamed (16).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (16).webp",
+    width: 765,
+    height: 1020,
+    type: "single",
+    edition: "Standard Print Edition",
+    hasPriceConflictNotes: "Dal Fry listed at ₹120, Dal Tadka ₹140 (compare with stickered spread at ₹160 / ₹180).",
+    itemsPreview: ["Dal Fry (₹120)", "Dal Tadka (₹140)", "Butter Dal (₹140)", "Aloo Methi (₹150)", "Capsicum Masala (₹150)", "Kadai Mushroom (₹170)"]
+  },
+  {
+    id: "page-7",
+    pageNumber: 7,
+    title: "Punjabi Curries & Paneer Specialties (Stickered Revision Spread)",
+    subtitle: "Full open book spread with updated prices including Bagara Paneer",
+    categories: ["Punjabi Curries", "Paneer Curries", "Paneer Spl. Curries"],
+    originalSrc: "/images/menu/original/unnamed.webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed.webp",
+    width: 1360,
+    height: 949,
+    type: "spread",
+    edition: "Stickered / Revised Edition",
+    hasPriceConflictNotes: "Bagara Paneer updated with sticker to ₹280.00 (from ₹220 / ₹250). Dal Fry updated to ₹160.",
+    itemsPreview: ["Dal Tadka (₹180)", "Methi Chaman (₹200)", "Kadai Paneer (₹230)", "Paneer Tikka Masala (₹220)", "Bagara Paneer (₹280)", "Spl KNL Paneer (₹280)"]
+  },
+  {
+    id: "page-8",
+    pageNumber: 8,
+    title: "Paneer Curries & Chef Specialties (Intermediate Print)",
+    subtitle: "Single page view featuring Bagara Paneer and signature paneer bowls",
+    categories: ["Paneer Curries", "Paneer Spl. Curries"],
+    originalSrc: "/images/menu/original/unnamed (14).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (14).webp",
+    width: 765,
+    height: 1020,
+    type: "single",
+    edition: "Standard Print Edition",
+    hasPriceConflictNotes: "Bagara Paneer listed at ₹250.00; Spl KNL Paneer ₹250.00.",
+    itemsPreview: ["Palak Paneer (₹180)", "Paneer Butter Masala (₹190)", "Kadai Paneer (₹210)", "Lababdar Paneer (₹230)", "Bagara Paneer (₹250)"]
+  },
+  {
+    id: "page-9",
+    pageNumber: 9,
+    title: "Paneer Curries & Early Print Specialties",
+    subtitle: "Early edition single page showing base catalog pricing",
+    categories: ["Paneer Curries", "Paneer Spl. Curries"],
+    originalSrc: "/images/menu/original/unnamed (18).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (18).webp",
+    width: 765,
+    height: 1020,
+    type: "single",
+    edition: "Early Print Edition",
+    hasPriceConflictNotes: "Bagara Paneer listed at ₹220.00; Palak Paneer ₹160.00.",
+    itemsPreview: ["Tamater Paneer (₹150)", "Paneer Butter Masala (₹160)", "Kadai Paneer (₹180)", "Bagara Paneer (₹220)"]
+  },
+  {
+    id: "page-10",
+    pageNumber: 10,
+    title: "Paneer Curries, Kaju & Kofta Specialties (Two-Page Spread)",
+    subtitle: "Rich cashew nut curries, stuffed vegetable koftas, and tandoori rotis",
+    categories: ["Paneer Curries", "Kaju Items", "Kofta Curries", "Tandoori Roti"],
+    originalSrc: "/images/menu/original/unnamed (6).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (6).webp",
+    width: 1360,
+    height: 1020,
+    type: "spread",
+    edition: "Standard Print Edition",
+    itemsPreview: ["Kaju Paneer (₹190)", "Kaju Masala (₹180)", "Malai Kofta (₹170)", "Spl Knl Kofta (₹180)", "Tandoori Roti (₹25)", "Butter Roti (₹30)"]
+  },
+  {
+    id: "page-11",
+    pageNumber: 11,
+    title: "Kaju Curries, Kofta Curries & Tandoori Roti (Single Page)",
+    subtitle: "Rich nut gravies and clay oven unleavened flatbreads",
+    categories: ["Kaju Items", "Kofta Curries", "Tandoori Roti"],
+    originalSrc: "/images/menu/original/unnamed (7).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (7).webp",
+    width: 765,
+    height: 1020,
+    type: "single",
+    edition: "Standard Print Edition",
+    itemsPreview: ["Kaju Paneer (₹190)", "Kaju Butter (₹180)", "Paneer Kofta (₹180)", "Bul Bul Kofta (₹170)", "Kothmir Butter Roti (₹35)"]
+  },
+  {
+    id: "page-12",
+    pageNumber: 12,
+    title: "Kaju, Naan & Basmati Biryani Spread (Stickered Revision)",
+    subtitle: "House biryanis and clay-oven naans with updated stickers",
+    categories: ["Kaju Items", "Kofta Curries", "Tandoori Naan", "Biryani (Basmati Rice)"],
+    originalSrc: "/images/menu/original/unnamed (2).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (2).webp",
+    width: 1360,
+    height: 942,
+    type: "spread",
+    edition: "Stickered / Revised Edition",
+    hasPriceConflictNotes: "Biryani prices revised: Knl Spl Veg Biryani ₹210 (was ₹180 / ₹200), Veg Biryani ₹180 (was ₹140 / ₹170), Spl Hyderabadi Biryani ₹260.",
+    itemsPreview: ["Plain Naan (₹40)", "Butter Naan (₹45)", "Garlic Naan (₹80)", "Knl Spl Veg Biryani (₹210)", "Veg Biryani (₹180)", "Kaju Paneer Biryani (₹260)", "Spl Hyderabadi Biryani (₹260)"]
+  },
+  {
+    id: "page-13",
+    pageNumber: 13,
+    title: "Tandoori Naan & Basmati Biryani (Intermediate Single Page)",
+    subtitle: "Clay oven flatbreads and slow-cooked dum biryani selections",
+    categories: ["Tandoori Naan", "Biryani (Basmati Rice)"],
+    originalSrc: "/images/menu/original/unnamed (15).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (15).webp",
+    width: 765,
+    height: 1020,
+    type: "single",
+    edition: "Standard Print Edition",
+    hasPriceConflictNotes: "Biryani prices intermediate: Knl Spl Biryani ₹200, Veg Biryani ₹170, Spl Hyderabadi ₹240.",
+    itemsPreview: ["Butter Naan (₹45)", "Pudina Naan (₹45)", "Aloo Paratha (₹70)", "Knl Spl Veg Biryani (₹200)", "Veg Biryani (₹170)", "Paneer Biryani (₹210)"]
+  },
+  {
+    id: "page-14",
+    pageNumber: 14,
+    title: "Tandoori Naans & Basmati Biryani (Early Single Page)",
+    subtitle: "Early edition single page with base biryani pricing",
+    categories: ["Tandoori Naan", "Biryani (Basmati Rice)"],
+    originalSrc: "/images/menu/original/unnamed (4).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (4).webp",
+    width: 765,
+    height: 1020,
+    type: "single",
+    edition: "Early Print Edition",
+    hasPriceConflictNotes: "Biryani early prices: Knl Spl Biryani ₹180, Veg Biryani ₹140, Paneer Biryani ₹180.",
+    itemsPreview: ["Plain Naan (₹30)", "Butter Naan (₹35)", "Knl Spl Veg Biryani (₹180)", "Veg Biryani (₹140)", "Mushroom Biryani (₹170)"]
+  },
+  {
+    id: "page-15",
+    pageNumber: 15,
+    title: "Biryani, Fried Rice, Noodles & Mocktails Spread",
+    subtitle: "Two-page spread showing Basmati rice dishes, noodles, and mocktails",
+    categories: ["Biryani", "Rice Items", "Noodles", "Mocktail"],
+    originalSrc: "/images/menu/original/unnamed (3).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (3).webp",
+    width: 1360,
+    height: 1020,
+    type: "spread",
+    edition: "Standard Print Edition",
+    itemsPreview: ["Knl Spl Fried Rice (₹180)", "Jeera Rice with Kaju (₹150)", "Veg Noodles (₹120)", "Paneer Noodles (₹150)", "Mint Mojito (₹80)", "Blue Curacao (₹80)"]
+  },
+  {
+    id: "page-16",
+    pageNumber: 16,
+    title: "Basmati Fried Rice, Noodles & Mocktails (Single Page)",
+    subtitle: "Wok-tossed rice dishes, hakka noodles, and cooling virgin coolers",
+    categories: ["Rice Items", "Noodles Items", "Mocktail"],
+    originalSrc: "/images/menu/original/unnamed (11).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (11).webp",
+    width: 765,
+    height: 1020,
+    type: "single",
+    edition: "Standard Print Edition",
+    itemsPreview: ["Knl Spl Fried Rice (₹180)", "Gobi Fried Rice (₹150)", "Veg Noodles (₹120)", "Mushroom Noodles (₹150)", "Virgin Mojito (₹80)", "Kiwi Mint (₹80)"]
+  },
+  {
+    id: "page-17",
+    pageNumber: 17,
+    title: "Sona Masoori Rice, Noodles & Ice Creams (Two-Page Spread)",
+    subtitle: "South Indian comfort rice items, fried noodles, and branded ice creams",
+    categories: ["Rice Items (Sona Masoori)", "Noodles", "Ice Creams"],
+    originalSrc: "/images/menu/original/unnamed (1).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (1).webp",
+    width: 1360,
+    height: 785,
+    type: "spread",
+    edition: "Stickered / Revised Edition",
+    itemsPreview: ["Knl Spl Fried Rice (₹200)", "Paneer Fried Rice (₹190)", "Spl Curd Rice (₹80)", "Veg Noodles (₹160)", "Belgian Chocolate Cone (₹60)", "Butter Scotch Tub (₹50)"]
+  },
+  {
+    id: "page-18",
+    pageNumber: 18,
+    title: "Fresh Fruit Juices & Thick Shakes",
+    subtitle: "Cold pressed fresh juices, seasonal fruit shakes, and thick dessert shakes",
+    categories: ["Fruit Juice", "Fruit Shakes", "Special Shakes"],
+    originalSrc: "/images/menu/original/unnamed (5).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (5).webp",
+    width: 1360,
+    height: 1020,
+    type: "single",
+    edition: "Standard Print Edition",
+    itemsPreview: ["Grape Juice (₹70)", "Pineapple Juice (₹70)", "Watermelon Juice (₹60)", "Mango Shake (₹60)", "Cold Coffee (₹90)", "Oreo Shake (₹90)", "Kitkat Shake (₹90)"]
+  },
+  {
+    id: "page-19",
+    pageNumber: 19,
+    title: "Ice Cream Shakes, Scoops & Official Restaurant Policies",
+    subtitle: "Dessert shakes, ice cream scoops, and restaurant dine-in guidelines",
+    categories: ["Ice Cream Milk Shake", "Ice Cream Scoop", "Beverages"],
+    originalSrc: "/images/menu/original/unnamed (13).webp",
+    enhancedSrc: "/images/menu/enhanced/enhanced_unnamed (13).webp",
+    width: 765,
+    height: 1020,
+    type: "single",
+    edition: "Standard Print Edition",
+    itemsPreview: ["Vanilla Milk Shake (₹80)", "Butter Scotch Shake (₹80)", "Chocolate Scoop (₹70)", "Mango Scoop (₹70)", "Cool Drinks", "Water Bottle 1 Ltr"]
+  }
+];

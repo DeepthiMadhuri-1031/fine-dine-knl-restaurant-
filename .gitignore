@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build artifacts
+dist/
+dist-ssr/
+*.local
+
+# Environment variables & secrets (CRITICAL)
+.env
+.env.local
+.env.*.local
+*.env
+
+# SQLite databases & backups (contain user data & credentials)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+server/*.db
+server/backups/
+
+# Temporary image processing & scratch files
+temp_images/
+*.pyc
+__pycache__/
+
+# Scratch scripts & temporary audit files
+find_fetch.cjs
+update_api_urls.cjs
+menu_inventory.json
+crop_remaining_dishes.py
+enhance_menu.py
+extract_dishes.py
+inspect_catalog.cjs
+process_dish_images.py
+test_security_and_images.cjs
+test_server.js
+verify_all_images.cjs
+verify_assets.py
+
+# Editor & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
