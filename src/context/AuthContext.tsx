@@ -90,9 +90,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => null);
       if (!res.ok) {
-        return { success: false, error: data.error || 'Login failed.' };
+        if (res.status === 404) {
+          return {
+            success: false,
+            error: 'Backend API service is not reachable (404). If the backend is on Render Free Tier, it may be waking up—please allow 30 seconds and retry.',
+          };
+        }
+        return { success: false, error: (data && data.error) || `Login failed (Status ${res.status}).` };
+      }
+
+      if (!data || !data.token) {
+        return { success: false, error: 'Malformed response received from authentication server.' };
       }
 
       setToken(data.token);
@@ -102,7 +112,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
       return { success: true, user: data.user };
     } catch (err) {
-      return { success: false, error: 'Could not connect to server. Please try again.' };
+      return {
+        success: false,
+        error: 'Could not connect to server. If the backend is on a free host, it may be waking up from sleep (takes ~30-50 seconds). Please retry shortly.',
+      };
     }
   };
 
@@ -126,9 +139,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }),
       });
 
-      const data = await res.json();
+      const data = await res.json().catch(() => null);
       if (!res.ok) {
-        return { success: false, error: data.error || 'Registration failed.' };
+        if (res.status === 404) {
+          return {
+            success: false,
+            error: 'Backend API service is not reachable (404). The server may be waking up; please wait 30 seconds and try again.',
+          };
+        }
+        return { success: false, error: (data && data.error) || `Registration failed (Status ${res.status}).` };
+      }
+
+      if (!data || !data.token) {
+        return { success: false, error: 'Malformed response received from registration server.' };
       }
 
       setToken(data.token);
@@ -138,7 +161,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
       return { success: true, user: data.user };
     } catch (err) {
-      return { success: false, error: 'Could not connect to server. Please try again.' };
+      return {
+        success: false,
+        error: 'Could not connect to server. Please check your internet connection or allow the backend service to spin up.',
+      };
     }
   };
 

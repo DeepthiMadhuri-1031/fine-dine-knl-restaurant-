@@ -1,22 +1,16 @@
 services:
   - type: web
-    name: fine-dine-knl
+    name: fine-dine-knl-api
     env: node
-    plan: starter
+    plan: free
     buildCommand: npm install && npm run build
     startCommand: npm start
     healthCheckPath: /api/health
-    disk:
-      name: knl-data
-      mountPath: /var/data
-      sizeGB: 1
     envVars:
       - key: NODE_VERSION
         value: 22.14.0
       - key: NODE_ENV
         value: production
-      - key: DATABASE_PATH
-        value: /var/data/knl_restaurant.db
       - key: JWT_SECRET
         generateValue: true
       - key: ADMIN_EMAIL
@@ -26,4 +20,6 @@ services:
       - key: ADMIN_PHONE
         value: "9490012345"
       - key: CLIENT_URL
-        sync: false
+        value: https://fine-dine-knl-restaurant.vercel.app
+      - key: CORS_ORIGIN
+        value: https://fine-dine-knl-restaurant.vercel.app

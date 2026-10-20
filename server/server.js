@@ -24,29 +24,38 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const HOST = process.env.HOST || '0.0.0.0';
 
-// CORS Configuration
+// CORS Configuration — Strictly allow Vercel production frontend and local dev environments
 const allowedOriginEnv = process.env.CORS_ORIGIN || process.env.CLIENT_URL || process.env.FRONTEND_URL;
-let corsOrigins;
+const defaultAllowedOrigins = [
+  'https://fine-dine-knl-restaurant.vercel.app',
+  'http://localhost:3000',
+  'http://localhost:4173',
+  'http://localhost:5000',
+  'http://127.0.0.1:4173',
+  'http://127.0.0.1:3000',
+];
 
+const corsOrigins = [...defaultAllowedOrigins];
 if (allowedOriginEnv) {
-  // Support comma-separated origins if multiple URLs are configured
-  corsOrigins = allowedOriginEnv.split(',').map(s => s.trim().replace(/\/+$/, ''));
-} else {
-  // In development or unified deployment, allow same-origin and common local dev ports
-  corsOrigins = ['http://localhost:3000', 'http://localhost:4173', 'http://localhost:5000', 'http://127.0.0.1:4173'];
+  const custom = allowedOriginEnv.split(',').map(s => s.trim().replace(/\/+$/, ''));
+  corsOrigins.push(...custom);
 }
 
 app.use(cors({
   origin: (origin, callback) => {
-    // Allow server-to-server or requests with no origin (like mobile apps, curl, or same-origin)
-    if (!origin || corsOrigins === '*' || corsOrigins.includes(origin)) {
+    // Allow server-to-server or requests with no origin (mobile native apps, curl, or same-origin)
+    if (!origin) {
       return callback(null, true);
     }
-    // Allow any onrender.com subdomain for easy staging/preview testing
-    if (origin.endsWith('.onrender.com')) {
+    // Match exact allowed origins
+    if (corsOrigins.includes(origin)) {
       return callback(null, true);
     }
-    return callback(null, false);
+    // Allow any vercel.app or onrender.com preview deployment
+    if (origin.endsWith('.vercel.app') || origin.endsWith('.onrender.com')) {
+      return callback(null, true);
+    }
+    return callback(new Error(`CORS error: Origin ${origin} not permitted`));
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
