@@ -11,6 +11,7 @@ import { AdminRoute } from './components/AdminRoute';
 // Customer Pages
 import { HomePage } from './pages/HomePage';
 import { MenuPage } from './pages/MenuPage';
+import { QrMenuPage } from './pages/QrMenuPage';
 import { AboutPage } from './pages/AboutPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { ReviewsPage } from './pages/ReviewsPage';
@@ -80,6 +81,7 @@ export const App: React.FC = () => {
               {/* Public Customer Routes */}
               <Route path="/" element={<HomePage />} />
               <Route path="/menu" element={<MenuPage />} />
+              <Route path="/qr-menu" element={<QrMenuPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/reviews" element={<ReviewsPage />} />

@@ -23,6 +23,7 @@ adminRouter.get('/stats', (req, res) => {
     const deliveredRow = db.prepare(`SELECT COUNT(*) as cnt FROM orders WHERE status = 'delivered'`).get();
     const cancelledRow = db.prepare(`SELECT COUNT(*) as cnt FROM orders WHERE status = 'cancelled'`).get();
     const customerCountRow = db.prepare(`SELECT COUNT(*) as cnt FROM users WHERE role = 'customer'`).get();
+    const totalReservationsRow = db.prepare(`SELECT COUNT(*) as cnt FROM reservations`).get();
 
     // Calculate top-selling dishes from real orders
     const allOrderItems = db.prepare(`SELECT items_json FROM orders WHERE status != 'cancelled'`).all();
@@ -53,6 +54,14 @@ adminRouter.get('/stats', (req, res) => {
       LIMIT 5
     `).all();
 
+    // Recent 5 reservations
+    const recentReservationsRows = db.prepare(`
+      SELECT id, booking_code, customer_name, customer_phone, reservation_date, reservation_time, guests, seating_preference, status, created_at
+      FROM reservations
+      ORDER BY created_at DESC
+      LIMIT 5
+    `).all();
+
     res.json({
       metrics: {
         totalOrders: totalOrdersRow.cnt,
@@ -65,9 +74,11 @@ adminRouter.get('/stats', (req, res) => {
         deliveredOrders: deliveredRow.cnt,
         cancelledOrders: cancelledRow.cnt,
         totalCustomers: customerCountRow.cnt,
+        totalReservations: totalReservationsRow.cnt,
         topSellingDishes
       },
-      recentOrders: recentOrdersRows
+      recentOrders: recentOrdersRows,
+      recentReservations: recentReservationsRows
     });
   } catch (err) {
     console.error('Admin stats error:', err);

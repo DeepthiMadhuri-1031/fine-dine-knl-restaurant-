@@ -69,3 +69,24 @@ export function requireAdmin(req, res, next) {
     next();
   });
 }
+
+/**
+ * Middleware: Optional authentication (attaches user if present, proceeds otherwise)
+ */
+export function optionalAuth(req, res, next) {
+  const authHeader = req.headers.authorization;
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    const token = authHeader.split(' ')[1];
+    try {
+      const decoded = jwt.verify(token, JWT_SECRET);
+      const userStmt = db.prepare('SELECT id, name, email, phone, role FROM users WHERE id = ?');
+      const user = userStmt.get(decoded.id);
+      if (user) {
+        req.user = user;
+      }
+    } catch {
+      // Ignored for optional auth
+    }
+  }
+  next();
+}

@@ -11,6 +11,8 @@ import { orderRouter } from './routes/orderRoutes.js';
 import { menuRouter } from './routes/menuRoutes.js';
 import { adminRouter } from './routes/adminRoutes.js';
 import { settingsRouter } from './routes/settingsRoutes.js';
+import { reservationRouter } from './routes/reservationRoutes.js';
+import { reviewRouter } from './routes/reviewRoutes.js';
 
 dotenv.config();
 
@@ -73,7 +75,7 @@ app.get('/api/health', (req, res) => {
     res.json({
       status: isDbConnected ? 'healthy' : 'degraded',
       database: isDbConnected ? 'connected' : 'unreachable',
-      name: 'FINE DINE KNL RESTAURANT Backend API',
+      name: 'Ajwa Exotica Restaurant Backend API',
       location: 'Kurnool, Andhra Pradesh',
       environment: process.env.NODE_ENV || 'development',
       timestamp: new Date().toISOString()
@@ -95,6 +97,8 @@ app.use('/api/orders', orderRouter);
 app.use('/api/menu', menuRouter);
 app.use('/api/settings', settingsRouter);
 app.use('/api/admin', adminRouter);
+app.use('/api/reservations', reservationRouter);
+app.use('/api/reviews', reviewRouter);
 
 // Serve built frontend assets in production (Unified Architecture)
 const distPath = path.resolve(__dirname, '../dist');
@@ -107,6 +111,18 @@ if (fs.existsSync(distPath)) {
       return res.sendFile('index.html', { root: distPath });
     }
     next();
+  });
+} else {
+  // Friendly root handler when operating purely as a backend API server for Vercel
+  app.get('/', (req, res) => {
+    res.json({
+      status: 'online',
+      name: 'FINE DINE KNL RESTAURANT Backend API',
+      location: 'Kurnool, Andhra Pradesh',
+      healthCheck: '/api/health',
+      frontendUrl: process.env.CLIENT_URL || 'https://fine-dine-knl-restaurant.vercel.app',
+      message: 'FINE DINE KNL RESTAURANT backend API is online. Storefront is hosted on Vercel.'
+    });
   });
 }
 

@@ -1039,7 +1039,7 @@ export const AccountPage: React.FC = () => {
                     value={addrStreetLocality}
                     onChange={(e) => setAddrStreetLocality(e.target.value)}
                     required
-                    placeholder="e.g. 18, Khadakpura Street, Khadak Pura"
+                    placeholder="e.g. Venkata Ramana Colony, Ameen Abbas Nagar"
                     className="w-full px-3 py-2 rounded-xl bg-charcoal-900 border border-charcoal-700 text-cream-100 text-xs focus:outline-none focus:border-gold-400"
                   />
                 </div>

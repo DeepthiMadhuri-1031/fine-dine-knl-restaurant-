@@ -22,13 +22,13 @@ export const MenuPage: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-widest">
             <Utensils className="w-3.5 h-3.5" />
-            <span>Pure Vegetarian Indian Menu</span>
+            <span>Ajwa Exotica Multicuisine Menu</span>
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl font-bold text-cream-100">
-            The Restaurant Menu
+            Restaurant Menu & Catalog
           </h1>
-          <p className="text-sm sm:text-base text-cream-300 leading-relaxed">
-            Explore authentic Indian curries, slow-cooked Hyderabadi biryanis, sizzling paneer starters, and clay-oven flatbreads. View both the original printed menu scans and our interactive searchable digital menu.
+          <p className="text-sm sm:text-base text-cream-300 leading-relaxed font-light">
+            Explore authentic Biryani, Arabian Mandi, Tandoori Kebabs, Mughlai gravies, and multicuisine selections at Ajwa Exotica, Kurnool.
           </p>
         </div>
 

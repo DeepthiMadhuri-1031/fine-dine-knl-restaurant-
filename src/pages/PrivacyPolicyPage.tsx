@@ -25,7 +25,7 @@ export const PrivacyPolicyPage: React.FC = () => {
               Privacy Policy
             </h1>
             <p className="text-xs text-cream-400 mt-2">
-              Last Updated: October 2026 · FINE DINE KNL RESTAURANT, Kurnool
+              Last Updated: October 2026 · Ajwa Exotica, Kurnool
             </p>
           </div>
 
@@ -36,7 +36,7 @@ export const PrivacyPolicyPage: React.FC = () => {
                 <span>1. Information We Collect</span>
               </h2>
               <p>
-                When you visit, register, or order from <strong>FINE DINE KNL RESTAURANT</strong>, we collect necessary personal details to process your dining orders and facilitate food delivery in Kurnool. This includes:
+                When you visit, register, or order from <strong>Ajwa Exotica</strong>, we collect necessary personal details to process your dining orders and facilitate food delivery in Kurnool. This includes:
               </p>
               <ul className="list-disc pl-5 space-y-1 text-cream-300">
                 <li><strong>Identity Information:</strong> Your full name and email address.</li>
@@ -83,7 +83,7 @@ export const PrivacyPolicyPage: React.FC = () => {
                 <span>4. Contact Our Operations Team</span>
               </h2>
               <p>
-                If you have questions regarding your personal information, saved delivery addresses, or want your customer account removed from our database, please contact our Kurnool management team at <strong>support@finedineknl.com</strong> or call <strong>+91 98765 43210</strong>.
+                If you have questions regarding your personal information, saved delivery addresses, or want your customer account removed from our database, please visit our restaurant at 3rd Floor, above Vishal Mart, Venkata Ramana Colony, Ameen Abbas Nagar, Kurnool, Andhra Pradesh 518003 or call our verified line at <strong>085182 53599</strong>.
               </p>
             </section>
           </div>

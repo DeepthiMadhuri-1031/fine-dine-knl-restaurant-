@@ -221,7 +221,7 @@ async function runTestSuite() {
   console.log('\n--- TEST 13: Public Settings Endpoint ---');
   const pubSettings = await request('/settings');
   assert(pubSettings.status === 200, 'GET /settings returns 200 OK');
-  assert(pubSettings.data.settings.restaurant_name === 'FINE DINE KNL RESTAURANT', 'Settings reflect correct restaurant name');
+  assert(pubSettings.data.settings.restaurant_name === 'Ajwa Exotica', 'Settings reflect correct restaurant name (Ajwa Exotica)');
   assert(pubSettings.data.settings.free_delivery_threshold === 500, 'Free delivery threshold configured at 500');
 
   // 14. Server-Side Price Calculation & Order Creation
@@ -463,7 +463,7 @@ async function runTestSuite() {
     body: JSON.stringify({
       is_open: 1,
       opening_time: '11:00 AM',
-      closing_time: '11:00 PM',
+      closing_time: '11:30 PM',
       delivery_enabled: 1,
       pickup_enabled: 1,
       delivery_fee: 30,
@@ -472,11 +472,11 @@ async function runTestSuite() {
       tax_percentage: 0,
       min_order_value: 100,
       cancellation_window_mins: 5,
-      upi_id: 'finedineknl@upi',
+      upi_id: 'ajwaexotica@upi',
       upi_qr_url: '/images/upi-qr-placeholder.png',
-      contact_phone: '9876543210',
-      contact_email: 'support@finedineknl.com',
-      address: '18, Khadakpura Street, Khadak Pura, Kurnool, Andhra Pradesh 518001'
+      contact_phone: '085182 53599',
+      contact_email: '',
+      address: '3rd Floor, above Vishal Mart, Venkata Ramana Colony, Ameen Abbas Nagar, Kurnool, Andhra Pradesh 518003, India'
     })
   });
   console.log('Update settings response:', updateSettingsRes.status, updateSettingsRes.data);

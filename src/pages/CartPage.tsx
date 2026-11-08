@@ -128,9 +128,14 @@ export const CartPage: React.FC = () => {
                       className="w-16 h-16 rounded-xl object-cover bg-charcoal-900 border border-charcoal-700 shrink-0"
                     />
                     <div>
-                      <h3 className="font-serif font-bold text-base text-cream-100 leading-snug">
-                        {item.dish.name}
-                      </h3>
+                      <div className="flex items-center gap-1.5">
+                        <span className={`w-3.5 h-3.5 rounded border flex items-center justify-center shrink-0 ${item.dish.isVeg ? 'border-emerald-500' : 'border-rose-500'}`}>
+                          <span className={`w-1.5 h-1.5 rounded-full ${item.dish.isVeg ? 'bg-emerald-500' : 'bg-rose-500'}`}></span>
+                        </span>
+                        <h3 className="font-serif font-bold text-base text-cream-100 leading-snug">
+                          {item.dish.name}
+                        </h3>
+                      </div>
                       <div className="text-xs text-cream-400 flex flex-wrap items-center gap-2 mt-0.5">
                         <span className="text-gold-400 font-semibold font-mono">₹{item.selectedPrice}</span>
                         {item.selectedVariantLabel && (

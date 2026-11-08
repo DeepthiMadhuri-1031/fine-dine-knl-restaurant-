@@ -66,7 +66,7 @@ export const AdminLoginPage: React.FC = () => {
               Management Portal
             </h1>
             <p className="text-xs text-cream-300 mt-1">
-              FINE DINE KNL RESTAURANT Operations & Kitchen Control
+              AJWA EXOTICA Operations & Kitchen Control
             </p>
           </div>
 

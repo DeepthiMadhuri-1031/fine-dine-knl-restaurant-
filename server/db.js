@@ -157,6 +157,32 @@ export function initDatabase() {
       details TEXT,
       created_at TEXT NOT NULL
     );
+
+    CREATE TABLE IF NOT EXISTS reservations (
+      id TEXT PRIMARY KEY,
+      booking_code TEXT UNIQUE NOT NULL,
+      customer_name TEXT NOT NULL,
+      customer_phone TEXT NOT NULL,
+      customer_email TEXT,
+      reservation_date TEXT NOT NULL,
+      reservation_time TEXT NOT NULL,
+      guests INTEGER NOT NULL DEFAULT 2,
+      seating_preference TEXT NOT NULL DEFAULT 'standard',
+      special_requests TEXT,
+      status TEXT NOT NULL DEFAULT 'confirmed',
+      created_at TEXT NOT NULL,
+      updated_at TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS reviews (
+      id TEXT PRIMARY KEY,
+      customer_name TEXT NOT NULL,
+      rating INTEGER NOT NULL,
+      dish_experienced TEXT,
+      comment TEXT NOT NULL,
+      status TEXT NOT NULL DEFAULT 'approved',
+      created_at TEXT NOT NULL
+    );
   `);
 
   // Safe column migrations for existing tables
@@ -211,10 +237,10 @@ export function initDatabase() {
     console.log(`✅ Default admin account verified: ${adminEmail}`);
   }
 
-  // Seed default restaurant settings if not exists
+  // Seed or update restaurant settings for Ajwa Exotica
   const settingsCheck = db.prepare('SELECT id FROM restaurant_settings WHERE id = 1').get();
+  const now = new Date().toISOString();
   if (!settingsCheck) {
-    const now = new Date().toISOString();
     db.prepare(`
       INSERT INTO restaurant_settings (
         id, restaurant_name, phone, email, address, city,
@@ -222,18 +248,35 @@ export function initDatabase() {
         delivery_enabled, pickup_enabled, delivery_fee,
         free_delivery_threshold, min_order_amount, packaging_fee,
         tax_percent, cancellation_window_mins, upi_id, updated_at
-      ) VALUES (1, ?, ?, ?, ?, ?, ?, ?, 1, 1, 1, 30, 500, 150, 15, 5.0, 5, 'finedineknl@upi', ?)
+      ) VALUES (1, ?, ?, ?, ?, ?, ?, ?, 1, 1, 1, 30, 500, 150, 15, 5.0, 5, 'ajwaexotica@upi', ?)
     `).run(
-      'FINE DINE KNL RESTAURANT',
-      '+91 94900 12345',
-      'contact@finedineknl.com',
-      'Near Collector Office Road, Kurnool, Andhra Pradesh 518002',
+      'Ajwa Exotica',
+      '085182 53599',
+      'contact@ajwaexotica.com',
+      '3rd Floor, above Vishal Mart, Venkata Ramana Colony, Ameen Abbas Nagar, Kurnool, Andhra Pradesh 518003, India',
       'Kurnool',
-      '11:00 AM',
-      '11:00 PM',
+      '11:30 AM',
+      '11:30 PM',
       now
     );
-    console.log('✅ Default restaurant settings initialized.');
+    console.log('✅ Ajwa Exotica restaurant settings initialized.');
+  } else {
+    db.prepare(`
+      UPDATE restaurant_settings
+      SET restaurant_name = ?,
+          phone = ?,
+          address = ?,
+          city = 'Kurnool',
+          closing_time = '11:30 PM',
+          updated_at = ?
+      WHERE id = 1
+    `).run(
+      'Ajwa Exotica',
+      '085182 53599',
+      '3rd Floor, above Vishal Mart, Venkata Ramana Colony, Ameen Abbas Nagar, Kurnool, Andhra Pradesh 518003, India',
+      now
+    );
+    console.log('✅ Ajwa Exotica restaurant settings synchronized.');
   }
 
   // Seed / sync menu inventory from menuCatalog.json
@@ -290,5 +333,56 @@ export function initDatabase() {
     }
   } catch (err) {
     console.warn('Could not sync menu_inventory:', err.message);
+  }
+
+  // Seed initial customer reviews if empty
+  try {
+    const reviewCount = db.prepare('SELECT COUNT(*) as cnt FROM reviews').get();
+    if (reviewCount.cnt === 0) {
+      const insertReview = db.prepare(`
+        INSERT INTO reviews (id, customer_name, rating, dish_experienced, comment, status, created_at)
+        VALUES (?, ?, ?, ?, ?, 'approved', ?)
+      `);
+      const initialReviews = [
+        {
+          id: 'rev_001',
+          name: 'Mohammed Farhan',
+          rating: 5,
+          dish: 'Chicken Mandi & Mutton Biryani',
+          comment: 'The Chicken Mandi and Mutton Dum Biryani here are unmatched in Kurnool. The outdoor terrace on the 3rd floor above Vishal Mart is wonderful for family dinners!',
+          date: '2026-10-15T19:30:00Z'
+        },
+        {
+          id: 'rev_002',
+          name: 'Sandeep Kumar',
+          rating: 5,
+          dish: 'Tandoori Murgh & Bagara Paneer',
+          comment: 'Visited with my family for an anniversary dinner in their private dining room. Tandoori Murgh and Bagara Paneer were rich and fresh. Very reasonable spend of around ₹300 per person.',
+          date: '2026-10-17T20:15:00Z'
+        },
+        {
+          id: 'rev_003',
+          name: 'Ananya Varma',
+          rating: 4,
+          dish: 'Blue Lagoon Mocktail & Starters',
+          comment: 'Superb flavours and great hospitality. The Blue Lagoon mocktail and Schezwan fried rice were great. Slightly crowded during Sunday peak rush, but totally worth the wait.',
+          date: '2026-10-19T14:00:00Z'
+        },
+        {
+          id: 'rev_004',
+          name: 'Rajeshwar Rao',
+          rating: 5,
+          dish: 'Special Mutton Biryani',
+          comment: 'Authentic spices and tender meat. Very clean family atmosphere and dedicated parking space. Will definitely visit again.',
+          date: '2026-10-21T21:00:00Z'
+        }
+      ];
+      for (const rev of initialReviews) {
+        insertReview.run(rev.id, rev.name, rev.rating, rev.dish, rev.comment, rev.date);
+      }
+      console.log('✅ Seeded initial customer reviews.');
+    }
+  } catch (err) {
+    console.warn('Could not seed reviews:', err.message);
   }
 }

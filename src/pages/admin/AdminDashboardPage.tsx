@@ -18,6 +18,8 @@ import {
   TrendingUp,
   AlertCircle
 } from 'lucide-react';
+import { Card3DTilt } from '../../components/Card3DTilt';
+import { Button3D } from '../../components/Button3D';
 
 interface StatsMetrics {
   totalOrders: number;
@@ -40,10 +42,25 @@ interface RecentOrder {
   created_at: string;
 }
 
+interface AdminReservation {
+  id: string;
+  booking_code: string;
+  customer_name: string;
+  customer_phone: string;
+  reservation_date: string;
+  reservation_time: string;
+  guests: number;
+  seating_preference: string;
+  special_requests?: string;
+  status: string;
+  created_at: string;
+}
+
 export const AdminDashboardPage: React.FC = () => {
   const { token } = useAuth();
   const [metrics, setMetrics] = useState<StatsMetrics | null>(null);
   const [recentOrders, setRecentOrders] = useState<RecentOrder[]>([]);
+  const [reservations, setReservations] = useState<AdminReservation[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -61,6 +78,14 @@ export const AdminDashboardPage: React.FC = () => {
       } else {
         const err = await res.json();
         setErrorMsg(err.error || 'Failed to fetch dashboard metrics.');
+      }
+
+      const resRes = await fetch(apiUrl('/api/reservations'), {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      if (resRes.ok) {
+        const resData = await resRes.json();
+        setReservations(resData.reservations || []);
       }
     } catch (err) {
       setErrorMsg('Could not connect to backend server.');
@@ -90,6 +115,24 @@ export const AdminDashboardPage: React.FC = () => {
       }
     } catch (err) {
       console.warn('Update status error:', err);
+    }
+  };
+
+  const updateReservationStatus = async (id: string, status: string) => {
+    try {
+      const res = await fetch(apiUrl(`/api/reservations/${id}/status`), {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({ status })
+      });
+      if (res.ok) {
+        fetchStats();
+      }
+    } catch (err) {
+      console.warn('Update reservation status error:', err);
     }
   };
 
@@ -133,11 +176,11 @@ export const AdminDashboardPage: React.FC = () => {
           </div>
         )}
 
-        {/* 4 Primary Metric Cards */}
+        {/* 4 Primary 3D Metric Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           
           {/* Total Revenue */}
-          <div className="bg-charcoal-900 border border-gold-500/20 rounded-2xl p-5 shadow-xl relative overflow-hidden group hover:border-gold-500/40 transition-all">
+          <Card3DTilt className="bg-charcoal-900 border border-gold-500/30 rounded-2xl p-5 shadow-xl relative overflow-hidden group hover:border-gold-500/50 transition-all">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-cream-400">Total Net Revenue</span>
               <div className="w-9 h-9 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center">
@@ -150,10 +193,10 @@ export const AdminDashboardPage: React.FC = () => {
               </span>
             </div>
             <span className="text-[11px] text-cream-400 mt-1 block">From verified paid dining orders</span>
-          </div>
+          </Card3DTilt>
 
           {/* Total Orders */}
-          <div className="bg-charcoal-900 border border-gold-500/20 rounded-2xl p-5 shadow-xl relative overflow-hidden group hover:border-gold-500/40 transition-all">
+          <Card3DTilt className="bg-charcoal-900 border border-gold-500/30 rounded-2xl p-5 shadow-xl relative overflow-hidden group hover:border-gold-500/50 transition-all">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-cream-400">Total Orders Placed</span>
               <div className="w-9 h-9 rounded-xl bg-sky-500/10 border border-sky-500/30 text-sky-400 flex items-center justify-center">
@@ -166,10 +209,10 @@ export const AdminDashboardPage: React.FC = () => {
               </span>
             </div>
             <span className="text-[11px] text-cream-400 mt-1 block">All-time order volume</span>
-          </div>
+          </Card3DTilt>
 
           {/* Active Kitchen Load */}
-          <div className="bg-charcoal-900 border border-gold-500/20 rounded-2xl p-5 shadow-xl relative overflow-hidden group hover:border-gold-500/40 transition-all">
+          <Card3DTilt className="bg-charcoal-900 border border-gold-500/30 rounded-2xl p-5 shadow-xl relative overflow-hidden group hover:border-gold-500/50 transition-all">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-cream-400">Active Kitchen Orders</span>
               <div className="w-9 h-9 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center animate-pulse">
@@ -184,10 +227,10 @@ export const AdminDashboardPage: React.FC = () => {
             <span className="text-[11px] text-cream-400 mt-1 block">
               {metrics ? `${metrics.confirmedOrders} queued · ${metrics.preparingOrders} cooking` : 'Loading...'}
             </span>
-          </div>
+          </Card3DTilt>
 
           {/* Registered Customers */}
-          <div className="bg-charcoal-900 border border-gold-500/20 rounded-2xl p-5 shadow-xl relative overflow-hidden group hover:border-gold-500/40 transition-all">
+          <Card3DTilt className="bg-charcoal-900 border border-gold-500/30 rounded-2xl p-5 shadow-xl relative overflow-hidden group hover:border-gold-500/50 transition-all">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-cream-400">Customer Accounts</span>
               <div className="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center">
@@ -200,7 +243,7 @@ export const AdminDashboardPage: React.FC = () => {
               </span>
             </div>
             <span className="text-[11px] text-cream-400 mt-1 block">Registered Kurnool patrons</span>
-          </div>
+          </Card3DTilt>
 
         </div>
 
@@ -317,6 +360,108 @@ export const AdminDashboardPage: React.FC = () => {
                         )}
                         {(ord.status === 'delivered' || ord.status === 'cancelled') && (
                           <span className="text-cream-500 text-[11px]">Finalized</span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </div>
+
+        {/* Table Reservations Roster */}
+        <div className="bg-charcoal-900 border border-charcoal-800 rounded-3xl p-6 shadow-xl space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <h2 className="font-serif text-xl font-bold text-cream-100 flex items-center gap-2">
+                <UtensilsCrossed className="w-5 h-5 text-gold-400" />
+                <span>Table Reservations (Ajwa Exotica)</span>
+              </h2>
+              <p className="text-xs text-cream-300 mt-0.5">
+                Confirmed guest reservations for Main Dining Hall, Terrace & Private Dining Room
+              </p>
+            </div>
+            <span className="text-xs font-mono text-gold-400 bg-gold-500/10 border border-gold-500/30 px-3 py-1 rounded-full self-start sm:self-auto">
+              {reservations.length} Bookings Total
+            </span>
+          </div>
+
+          {reservations.length === 0 ? (
+            <div className="py-8 text-center text-cream-400 text-xs">
+              No table reservations recorded yet.
+            </div>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-xs">
+                <thead>
+                  <tr className="border-b border-charcoal-750 text-cream-400 uppercase tracking-wider">
+                    <th className="py-3 px-4">Booking Code</th>
+                    <th className="py-3 px-4">Guest Details</th>
+                    <th className="py-3 px-4">Date & Time</th>
+                    <th className="py-3 px-4">Guests</th>
+                    <th className="py-3 px-4">Seating Area</th>
+                    <th className="py-3 px-4">Status</th>
+                    <th className="py-3 px-4 text-right">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-charcoal-800">
+                  {reservations.slice(0, 8).map((res) => (
+                    <tr key={res.id} className="hover:bg-charcoal-850/60 transition-colors">
+                      <td className="py-3.5 px-4 font-mono font-bold text-gold-400">
+                        {res.booking_code}
+                      </td>
+                      <td className="py-3.5 px-4">
+                        <span className="font-semibold text-cream-100 block">{res.customer_name}</span>
+                        <span className="text-[11px] text-cream-400">{res.customer_phone}</span>
+                        {res.special_requests && (
+                          <span className="text-[10px] text-gold-500/90 italic block mt-0.5">"{res.special_requests}"</span>
+                        )}
+                      </td>
+                      <td className="py-3.5 px-4">
+                        <span className="text-cream-100 font-semibold block">{res.reservation_date}</span>
+                        <span className="text-[11px] text-cream-400">{res.reservation_time}</span>
+                      </td>
+                      <td className="py-3.5 px-4 font-semibold text-cream-100">
+                        {res.guests} Guests
+                      </td>
+                      <td className="py-3.5 px-4 text-cream-300 capitalize">
+                        {res.seating_preference.replace('_', ' ')}
+                      </td>
+                      <td className="py-3.5 px-4">
+                        <span className={`inline-block px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                          res.status === 'confirmed' ? 'bg-sky-950 text-sky-400 border border-sky-500/30' :
+                          res.status === 'seated' ? 'bg-amber-950 text-amber-400 border border-amber-500/30' :
+                          res.status === 'completed' ? 'bg-emerald-950 text-emerald-400 border border-emerald-500/30' :
+                          'bg-rose-950 text-rose-400 border border-rose-500/30'
+                        }`}>
+                          {res.status}
+                        </span>
+                      </td>
+                      <td className="py-3.5 px-4 text-right space-x-1.5">
+                        {res.status === 'confirmed' && (
+                          <button
+                            onClick={() => updateReservationStatus(res.id, 'seated')}
+                            className="px-2.5 py-1 rounded-lg bg-amber-500 hover:bg-amber-400 text-charcoal-950 font-bold text-[10px] uppercase tracking-wider"
+                          >
+                            Mark Seated
+                          </button>
+                        )}
+                        {res.status === 'seated' && (
+                          <button
+                            onClick={() => updateReservationStatus(res.id, 'completed')}
+                            className="px-2.5 py-1 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-charcoal-950 font-bold text-[10px] uppercase tracking-wider"
+                          >
+                            Complete
+                          </button>
+                        )}
+                        {res.status !== 'cancelled' && res.status !== 'completed' && (
+                          <button
+                            onClick={() => updateReservationStatus(res.id, 'cancelled')}
+                            className="px-2 py-1 rounded-lg bg-rose-950/80 hover:bg-rose-900 border border-rose-500/30 text-rose-300 text-[10px]"
+                          >
+                            Cancel
+                          </button>
                         )}
                       </td>
                     </tr>

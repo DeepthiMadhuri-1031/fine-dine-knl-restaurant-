@@ -15,6 +15,7 @@ import {
   Sparkles,
   ShieldCheck
 } from 'lucide-react';
+import { Button3D } from './Button3D';
 
 export const CartDrawer: React.FC = () => {
   const { 
@@ -150,8 +151,8 @@ export const CartDrawer: React.FC = () => {
                     {/* Dish Info */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-1.5">
-                        <span className="w-3.5 h-3.5 rounded border border-emerald-500 flex items-center justify-center shrink-0">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                        <span className={`w-3.5 h-3.5 rounded border flex items-center justify-center shrink-0 ${item.dish.isVeg ? 'border-emerald-500' : 'border-rose-500'}`}>
+                          <span className={`w-1.5 h-1.5 rounded-full ${item.dish.isVeg ? 'bg-emerald-500' : 'bg-rose-500'}`}></span>
                         </span>
                         <h4 className="font-serif text-sm font-bold text-cream-100 truncate">
                           {item.dish.name}
@@ -267,14 +268,17 @@ export const CartDrawer: React.FC = () => {
                 </div>
               </div>
 
-              {/* Checkout Action Button */}
-              <button
+              {/* 3D Checkout Action Button */}
+              <Button3D
+                variant="gold"
+                size="lg"
+                fullWidth
                 onClick={handleProceedCheckout}
-                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-charcoal-950 font-bold text-sm uppercase tracking-wider transition-all shadow-xl shadow-gold-500/20"
+                icon={<ArrowRight className="w-4 h-4" />}
+                iconPosition="right"
               >
-                <span>Proceed to Order (₹{grandTotal})</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+                Proceed to Order (₹{grandTotal})
+              </Button3D>
             </div>
           )}
 

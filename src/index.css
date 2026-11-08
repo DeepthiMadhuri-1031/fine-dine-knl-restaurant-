@@ -8,8 +8,8 @@
   }
   
   body {
-    background-color: #121212;
-    color: #F7F3EB;
+    background-color: #211C1B;
+    color: #FFF7E9;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
@@ -25,29 +25,182 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #171717;
+  background: #171312;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333333;
+  background: #362E2C;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B99558;
+  background: #D7A64A;
 }
 
-/* Subtle image overlay gradients */
+/* Luxury brand gradients & utility effects */
 .gold-gradient-text {
-  background: linear-gradient(135deg, #F7F3EB 0%, #D4B87C 50%, #B99558 100%);
+  background: linear-gradient(135deg, #FFF7E9 0%, #DFB561 50%, #D7A64A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gold-border {
-  border-color: rgba(185, 149, 88, 0.3);
+.burgundy-gradient {
+  background: linear-gradient(135deg, #4A1020 0%, #380B17 100%);
 }
 
 .gold-glow {
-  box-shadow: 0 0 25px rgba(185, 149, 88, 0.15);
+  box-shadow: 0 0 25px rgba(215, 166, 74, 0.2);
+}
+
+.burgundy-glow {
+  box-shadow: 0 10px 30px rgba(74, 16, 32, 0.4);
+}
+
+.gold-border {
+  border-color: rgba(215, 166, 74, 0.35);
+}
+
+/* Interactive button press effect */
+.btn-press {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+/* Skeleton Loading Shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #2A2423 25%, #362E2C 50%, #2A2423 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 3D Visual Depth & Tactile Physical UI System */
+.perspective-800 {
+  perspective: 800px;
+}
+.perspective-1000 {
+  perspective: 1000px;
+}
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* 3D Tactile Buttons with realistic physical keycap bevel & depth */
+.btn-3d-gold {
+  background: linear-gradient(180deg, #E6BA5E 0%, #D7A64A 55%, #B8852B 100%);
+  color: #171312;
+  box-shadow: 0 4px 0 #855C17, 0 8px 16px rgba(0, 0, 0, 0.45);
+  transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.12s cubic-bezier(0.2, 0.8, 0.4, 1);
+  position: relative;
+  overflow: hidden;
+}
+.btn-3d-gold:hover {
+  background: linear-gradient(180deg, #F0C975 0%, #DFB561 55%, #C29032 100%);
+  box-shadow: 0 5px 0 #855C17, 0 10px 20px rgba(215, 166, 74, 0.28);
+  transform: translateY(-1px);
+}
+.btn-3d-gold:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #855C17, 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+.btn-3d-burgundy {
+  background: linear-gradient(180deg, #6B172E 0%, #4A1020 55%, #330A15 100%);
+  color: #FFF7E9;
+  border: 1px solid rgba(215, 166, 74, 0.35);
+  box-shadow: 0 4px 0 #20050D, 0 8px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.12s cubic-bezier(0.2, 0.8, 0.4, 1);
+  position: relative;
+}
+.btn-3d-burgundy:hover {
+  background: linear-gradient(180deg, #7D1B36 0%, #571326 55%, #3C0C19 100%);
+  box-shadow: 0 5px 0 #20050D, 0 10px 20px rgba(74, 16, 32, 0.45);
+  transform: translateY(-1px);
+}
+.btn-3d-burgundy:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #20050D, 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.btn-3d-charcoal {
+  background: linear-gradient(180deg, #332B2A 0%, #25201F 55%, #1A1615 100%);
+  color: #FFF7E9;
+  border: 1px solid rgba(215, 166, 74, 0.25);
+  box-shadow: 0 4px 0 #100D0D, 0 8px 16px rgba(0, 0, 0, 0.55);
+  transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.12s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+.btn-3d-charcoal:hover {
+  background: linear-gradient(180deg, #3D3433 0%, #2E2827 55%, #1F1B1A 100%);
+  box-shadow: 0 5px 0 #100D0D, 0 10px 20px rgba(0, 0, 0, 0.65);
+  transform: translateY(-1px);
+}
+.btn-3d-charcoal:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #100D0D, 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* 3D Inset Containers & Inputs */
+.box-3d-inset {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.65), inset 0 -1px 1px rgba(255, 255, 255, 0.05), 0 1px 2px rgba(255, 255, 255, 0.05);
+}
+
+/* 3D Metallic Gloss Overlay */
+.gloss-specular {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+/* Floating 3D Layer Elevation */
+.layer-3d-1 {
+  transform: translateZ(12px);
+}
+.layer-3d-2 {
+  transform: translateZ(24px);
+}
+.layer-3d-3 {
+  transform: translateZ(36px);
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

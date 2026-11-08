@@ -163,7 +163,7 @@ export const OrderHistoryPage: React.FC = () => {
               <span>My Orders</span>
             </h1>
             <p className="text-sm text-cream-300 mt-1">
-              Live status, order history, digital receipts, and tracking for FINE DINE KNL
+              Live status, order history, digital receipts, and tracking for Ajwa Exotica
             </p>
           </div>
 
@@ -198,7 +198,7 @@ export const OrderHistoryPage: React.FC = () => {
             </div>
             <h2 className="font-serif text-2xl font-bold text-cream-100">No Orders Yet</h2>
             <p className="text-sm text-cream-300">
-              You haven't placed any orders with FINE DINE KNL yet. Explore our authentic royal menu and treat yourself today!
+              You haven't placed any orders with Ajwa Exotica yet. Explore our authentic royal menu and treat yourself today!
             </p>
             <Link
               to="/menu"

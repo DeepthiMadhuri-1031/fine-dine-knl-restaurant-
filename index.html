@@ -4,13 +4,64 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/images/dishes/knl-restaurant-logo.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FINE DINE KNL RESTAURANT — Kurnool | Biryani & Authentic Indian Cuisine</title>
-    <meta name="description" content="Discover delicious Indian flavours at FINE DINE KNL Restaurant in Kurnool, Andhra Pradesh. Veg Biryani, Paneer 65, Bagara Paneer, Curries, Tandoori Breads & Desserts." />
+    <title>Ajwa Exotica — Premium Fine-Dining Multicuisine Restaurant | Kurnool</title>
+    <meta name="description" content="Discover exceptional Biryani, flavourful Arabian Mandi, charcoal Kebabs, Mughlai gravies, and multicuisine family dining at Ajwa Exotica in Kurnool, Andhra Pradesh. 3rd Floor, above Vishal Mart." />
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Ajwa Exotica — Premium Fine-Dining Multicuisine Restaurant, Kurnool" />
+    <meta property="og:description" content="Where flavour meets elegance. Authentic Biryani, Mandi varieties, Kebabs, Mughlai, Chinese, Seafood, Outdoor Terrace & Private Dining Room." />
+    <meta property="og:type" content="restaurant.restaurant" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:image" content="/images/ajwa/ajwa-hero-feast.jpg" />
+
+    <!-- Google Fonts: Playfair Display & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Restaurant Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Ajwa Exotica",
+      "image": "/images/ajwa/ajwa-hero-feast.jpg",
+      "description": "Fine-dining multicuisine family restaurant in Kurnool featuring Chicken and Mutton Biryani, Arabian Mandi, Tandoori Kebabs, Mughlai curries, outdoor terrace seating and private dining.",
+      "telephone": "085182 53599",
+      "priceRange": "₹200–₹400",
+      "servesCuisine": [
+        "Multicuisine",
+        "Biryani",
+        "Arabian Mandi",
+        "Mughlai",
+        "North Indian",
+        "Chinese",
+        "Seafood"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3rd Floor, above Vishal Mart, Venkata Ramana Colony, Ameen Abbas Nagar",
+        "addressLocality": "Kurnool",
+        "addressRegion": "Andhra Pradesh",
+        "postalCode": "518003",
+        "addressCountry": "IN"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "611",
+        "bestRating": "5"
+      },
+      "amenityFeature": [
+        { "@type": "LocationFeatureSpecification", "name": "Family-Friendly Dining", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Outdoor Terrace Seating", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Private Dining Room", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Parking Available", "value": true }
+      ]
+    }
+    </script>
   </head>
-  <body class="bg-charcoal-900 text-cream-100 antialiased selection:bg-gold-500 selection:text-charcoal-950 font-sans">
+  <body class="bg-charcoal-950 text-cream-100 antialiased selection:bg-gold-500 selection:text-charcoal-950 font-sans">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

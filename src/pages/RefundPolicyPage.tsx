@@ -25,7 +25,7 @@ export const RefundPolicyPage: React.FC = () => {
               Cancellation & Refund Policy
             </h1>
             <p className="text-xs text-cream-400 mt-2">
-              Transparent, fair customer rules for FINE DINE KNL RESTAURANT
+              Transparent, fair customer rules for Ajwa Exotica
             </p>
           </div>
 
@@ -74,7 +74,7 @@ export const RefundPolicyPage: React.FC = () => {
                 <span>4. Direct Support Line</span>
               </h2>
               <p>
-                For immediate assistance with an ongoing order, call our restaurant directly at <strong>+91 98765 43210</strong> or email <strong>support@finedineknl.com</strong>.
+                For immediate assistance with an ongoing order, call our restaurant directly at <strong>085182 53599</strong> or visit us at 3rd Floor, above Vishal Mart, Venkata Ramana Colony, Ameen Abbas Nagar, Kurnool, Andhra Pradesh 518003.
               </p>
             </section>
           </div>

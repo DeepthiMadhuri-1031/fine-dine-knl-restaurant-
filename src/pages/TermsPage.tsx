@@ -25,7 +25,7 @@ export const TermsPage: React.FC = () => {
               Terms & Conditions
             </h1>
             <p className="text-xs text-cream-400 mt-2">
-              FINE DINE KNL RESTAURANT · 18, Khadakpura Street, Kurnool, Andhra Pradesh 518001
+              AJWA EXOTICA · 3rd Floor, above Vishal Mart, Venkata Ramana Colony, Ameen Abbas Nagar, Kurnool, Andhra Pradesh 518003
             </p>
           </div>
 
@@ -33,10 +33,10 @@ export const TermsPage: React.FC = () => {
             <section className="space-y-3">
               <h2 className="font-serif text-xl font-bold text-cream-100 flex items-center gap-2">
                 <UtensilsCrossed className="w-5 h-5 text-gold-400" />
-                <span>1. 100% Pure Vegetarian Kitchen Commitment</span>
+                <span>1. Multicuisine Dining & Kitchen Commitment</span>
               </h2>
               <p>
-                FINE DINE KNL is an authentic, dedicated pure vegetarian culinary establishment. All dishes, ingredients, oils, and cookware are maintained according to strict pure-veg food preparation standards.
+                Ajwa Exotica is a premier multicuisine family restaurant in Kurnool offering authentic biryanis, chicken and other mandi varieties, kebabs, Mughlai dishes, Chinese cuisine, seafood, and dedicated vegetarian specialties. All dishes are prepared with the highest standards of food safety, kitchen hygiene, cold-pressed oils, and authentic spices.
               </p>
             </section>
 

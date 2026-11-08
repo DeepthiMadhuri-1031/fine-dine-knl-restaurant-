@@ -64,11 +64,11 @@ export const AdminSettingsPage: React.FC = () => {
   const [minOrderValue, setMinOrderValue] = useState(100);
   const [cancellationWindowMins, setCancellationWindowMins] = useState(5);
 
-  const [upiId, setUpiId] = useState('finedineknl@upi');
+  const [upiId, setUpiId] = useState('ajwaexotica@upi');
   const [upiQrUrl, setUpiQrUrl] = useState('/images/upi-qr-placeholder.png');
-  const [contactPhone, setContactPhone] = useState('9876543210');
-  const [contactEmail, setContactEmail] = useState('support@finedineknl.com');
-  const [address, setAddress] = useState('18, Khadakpura Street, Khadak Pura, Kurnool, Andhra Pradesh 518001');
+  const [contactPhone, setContactPhone] = useState('085182 53599');
+  const [contactEmail, setContactEmail] = useState('');
+  const [address, setAddress] = useState('3rd Floor, above Vishal Mart, Venkata Ramana Colony, Ameen Abbas Nagar, Kurnool, Andhra Pradesh 518003, India');
 
   const fetchSettings = async () => {
     if (!token) return;
@@ -82,7 +82,7 @@ export const AdminSettingsPage: React.FC = () => {
         setSettings(s);
         setIsOpen(s.is_open === 1);
         setOpeningTime(s.opening_time || '11:00 AM');
-        setClosingTime(s.closing_time || '11:00 PM');
+        setClosingTime(s.closing_time || '11:30 PM');
         setDeliveryEnabled(s.delivery_enabled === 1);
         setPickupEnabled(s.pickup_enabled === 1);
         setDeliveryFee(s.delivery_fee || 30);
@@ -91,11 +91,11 @@ export const AdminSettingsPage: React.FC = () => {
         setTaxPercentage(s.tax_percentage || 0);
         setMinOrderValue(s.min_order_value || 100);
         setCancellationWindowMins(s.cancellation_window_mins || 5);
-        setUpiId(s.upi_id || 'finedineknl@upi');
+        setUpiId(s.upi_id || 'ajwaexotica@upi');
         setUpiQrUrl(s.upi_qr_url || '/images/upi-qr-placeholder.png');
-        setContactPhone(s.contact_phone || '9876543210');
-        setContactEmail(s.contact_email || 'support@finedineknl.com');
-        setAddress(s.address || '18, Khadakpura Street, Khadak Pura, Kurnool, Andhra Pradesh 518001');
+        setContactPhone(s.contact_phone || '085182 53599');
+        setContactEmail(s.contact_email || '');
+        setAddress(s.address || '3rd Floor, above Vishal Mart, Venkata Ramana Colony, Ameen Abbas Nagar, Kurnool, Andhra Pradesh 518003, India');
       }
     } catch (err) {
       console.warn('Error fetching settings:', err);

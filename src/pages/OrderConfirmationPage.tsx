@@ -66,7 +66,7 @@ export const OrderConfirmationPage: React.FC = () => {
     .join('\n');
 
   const whatsappMessage = 
-    `*NEW ORDER - FINE DINE KNL RESTAURANT*\n` +
+    `*NEW ORDER - AJWA EXOTICA*\n` +
     `--------------------------------\n` +
     `*Order ID:* ${order.orderId}\n` +
     `*Customer:* ${order.customerName}\n` +
@@ -81,7 +81,7 @@ export const OrderConfirmationPage: React.FC = () => {
     `*Total Payable:* ₹${order.total}\n` +
     `*Payment Mode:* ${order.paymentMethod.toUpperCase()}\n` +
     `--------------------------------\n` +
-    `_Thank you for ordering with FINE DINE KNL RESTAURANT, Kurnool!_`;
+    `_Thank you for ordering with Ajwa Exotica, Kurnool!_`;
 
   const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -166,7 +166,7 @@ export const OrderConfirmationPage: React.FC = () => {
               </div>
               <div>
                 <p className="text-xs font-bold text-cream-300">Enjoy Your Food</p>
-                <p className="text-[10px] text-cream-400">Khadakpura, Kurnool</p>
+                <p className="text-[10px] text-cream-400">Ajwa Exotica, Kurnool</p>
               </div>
             </div>
           </div>
@@ -180,7 +180,7 @@ export const OrderConfirmationPage: React.FC = () => {
                 Order Receipt & Item Details
               </h3>
               <p className="text-xs text-cream-400">
-                FINE DINE KNL RESTAURANT • 18, Khadakpura Street, Kurnool
+                AJWA EXOTICA • 3rd Floor, above Vishal Mart, Venkata Ramana Colony, Kurnool
               </p>
             </div>
             
@@ -206,7 +206,7 @@ export const OrderConfirmationPage: React.FC = () => {
                 {order.orderType === 'delivery' ? 'Delivery Address:' : order.orderType === 'dine-in' ? 'Dine-In Location:' : 'Pickup Location:'}
               </span>
               <p className="font-semibold text-cream-100">
-                {order.deliveryAddress || (order.tableNumber ? `Table: ${order.tableNumber}` : '18, Khadakpura Street, Kurnool')}
+                {order.deliveryAddress || (order.tableNumber ? `Table: ${order.tableNumber}` : 'Ajwa Exotica, 3rd Floor, above Vishal Mart, Kurnool')}
               </p>
             </div>
           </div>

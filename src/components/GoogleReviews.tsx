@@ -2,7 +2,7 @@ import React from 'react';
 import { Star, ExternalLink, ShieldCheck, MessageSquare, Award } from 'lucide-react';
 
 export const GoogleReviews: React.FC = () => {
-  const googleMapsListingUrl = "https://www.google.com/maps/search/?api=1&query=Fine%20Dine%20KNL%20Restaurant%2C%2018%2C%20Khadakpura%20Street%2C%20Khadak%20Pura%2C%20Kurnool%2C%20Andhra%20Pradesh%20518001%2C%20India";
+  const googleMapsListingUrl = "https://www.google.com/maps/search/?api=1&query=Ajwa%20Exotica%2C%203rd%20Floor%2C%20above%20Vishal%20Mart%2C%20Venkata%20Ramana%20Colony%2C%20Ameen%20Abbas%20Nagar%2C%20Kurnool%2C%20Andhra%20Pradesh%20518003";
 
   return (
     <section className="py-20 bg-charcoal-900 relative overflow-hidden" id="reviews-section">
@@ -118,7 +118,7 @@ export const GoogleReviews: React.FC = () => {
 
         {/* Reassurance text */}
         <p className="text-center text-xs text-cream-400 mt-6">
-          FINE DINE KNL RESTAURANT • 18, Khadakpura Street, Kurnool, Andhra Pradesh 518001
+          AJWA EXOTICA • 3rd Floor, above Vishal Mart, Venkata Ramana Colony, Ameen Abbas Nagar, Kurnool, Andhra Pradesh 518003
         </p>
       </div>
     </section>

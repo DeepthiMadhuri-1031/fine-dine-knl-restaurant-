@@ -175,7 +175,7 @@ export const OrderTrackingPage: React.FC = () => {
     .join('\n');
 
   const whatsappMessage = 
-    `*ORDER STATUS - FINE DINE KNL RESTAURANT*\n` +
+    `*ORDER STATUS - AJWA EXOTICA*\n` +
     `--------------------------------\n` +
     `*Order ID:* ${order.orderId}\n` +
     `*Status:* ${order.status.toUpperCase()}\n` +
@@ -185,7 +185,7 @@ export const OrderTrackingPage: React.FC = () => {
     `*ITEMS:*\n${itemsText}\n` +
     `--------------------------------\n` +
     `*Total:* ₹${order.total} (${order.payment_method.toUpperCase()})\n` +
-    `_FINE DINE KNL RESTAURANT, Kurnool_`;
+    `_Ajwa Exotica, Kurnool_`;
 
   const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -249,7 +249,7 @@ export const OrderTrackingPage: React.FC = () => {
             {isCancelled
               ? `This order was cancelled by ${order.cancelled_by === 'admin' ? 'Restaurant Management' : 'you'}. Reason: ${order.cancellation_reason || 'N/A'}`
               : order.status === 'delivered'
-              ? 'Your meal has been delivered. Thank you for dining with FINE DINE KNL RESTAURANT!'
+              ? 'Your meal has been delivered. Thank you for dining with Ajwa Exotica!'
               : 'Our kitchen team has received your order and is preparing authentic Kurnool delicacies.'}
           </p>
 

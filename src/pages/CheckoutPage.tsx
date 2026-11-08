@@ -21,8 +21,12 @@ import {
   LogIn,
   AlertCircle,
   Home,
-  Briefcase
+  Briefcase,
+  Compass,
+  Sparkles
 } from 'lucide-react';
+import { CustomerOnboardingModal, CustomerProfileData } from '../components/CustomerOnboardingModal';
+import { Button3D } from '../components/Button3D';
 
 interface SavedAddress {
   id: string;
@@ -50,6 +54,7 @@ export const CheckoutPage: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showUpiModal, setShowUpiModal] = useState(false);
+  const [showOnboardingModal, setShowOnboardingModal] = useState(false);
 
   // Saved addresses
   const [savedAddresses, setSavedAddresses] = useState<SavedAddress[]>([]);
@@ -118,6 +123,16 @@ export const CheckoutPage: React.FC = () => {
   const handleAddressSelect = (addr: SavedAddress) => {
     setSelectedAddressId(addr.id);
     setDeliveryAddress(`${addr.address_line}${addr.landmark ? `, Near: ${addr.landmark}` : ''}, ${addr.city} - ${addr.pincode}`);
+  };
+
+  const handleOnboardingComplete = (profile: CustomerProfileData) => {
+    if (profile.name) setCustomerName(profile.name);
+    if (profile.phone) setCustomerPhone(profile.phone);
+    if (profile.fullAddressString) setDeliveryAddress(profile.fullAddressString);
+    if (profile.deliveryInstructions) {
+      setOrderNotes((prev) => prev ? `${prev} · ${profile.deliveryInstructions}` : (profile.deliveryInstructions || ''));
+    }
+    setShowOnboardingModal(false);
   };
 
   const executeOrderSubmission = async () => {
@@ -344,15 +359,25 @@ export const CheckoutPage: React.FC = () => {
               {/* Delivery Address or Table Number */}
               {orderType === 'delivery' && (
                 <div className="space-y-3">
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
                     <label className="block text-xs font-semibold uppercase tracking-wider text-cream-300">
                       Delivery Address in Kurnool
                     </label>
-                    {user && savedAddresses.length > 0 && (
-                      <span className="text-[11px] text-gold-400">
-                        {savedAddresses.length} saved address(es) available
-                      </span>
-                    )}
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setShowOnboardingModal(true)}
+                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-burgundy-900/60 border border-gold-500/40 text-gold-400 hover:bg-gold-500 hover:text-charcoal-950 text-xs font-medium transition-all shadow-sm"
+                      >
+                        <Compass className="w-3.5 h-3.5" />
+                        <span>Detect GPS / Detailed Profile</span>
+                      </button>
+                      {user && savedAddresses.length > 0 && (
+                        <span className="text-[11px] text-gold-400 hidden sm:inline">
+                          ({savedAddresses.length} saved)
+                        </span>
+                      )}
+                    </div>
                   </div>
 
                   {/* Saved Address Quick Selector */}
@@ -483,22 +508,18 @@ export const CheckoutPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Place Order CTA */}
-              <button
+              {/* 3D Place Order CTA */}
+              <Button3D
+                variant="gold"
+                size="lg"
                 type="submit"
-                disabled={isSubmitting || !user}
-                className="w-full py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-charcoal-950 font-bold text-xs uppercase tracking-wider transition-all duration-200 flex items-center justify-center gap-2 shadow-xl shadow-gold-500/20 disabled:opacity-50"
+                fullWidth
+                isLoading={isSubmitting}
+                disabled={!user}
+                icon={<ShieldCheck className="w-4 h-4" />}
               >
-                {isSubmitting ? (
-                  <div className="w-5 h-5 border-2 border-charcoal-950 border-t-transparent rounded-full animate-spin" />
-                ) : (
-                  <>
-                    <ShieldCheck className="w-4 h-4" />
-                    <span>Place Restaurant Order · ₹{grandTotal}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </>
-                )}
-              </button>
+                Place Restaurant Order · ₹{grandTotal}
+              </Button3D>
 
               {!user && (
                 <p className="text-center text-xs text-amber-400">
@@ -617,13 +638,14 @@ export const CheckoutPage: React.FC = () => {
               <div className="p-4 bg-white rounded-xl inline-block shadow-inner mx-auto">
                 <div className="w-44 h-44 bg-charcoal-100 border-2 border-dashed border-charcoal-300 rounded flex flex-col items-center justify-center p-2 text-charcoal-900">
                   <QrCode className="w-20 h-20 text-charcoal-900 mb-1" />
-                  <span className="font-mono font-bold text-xs">UPI: finedineknl@upi</span>
+                  <span className="font-serif font-bold text-xs text-burgundy-950">Ajwa Exotica Kurnool</span>
+                  <span className="font-mono text-[11px] text-charcoal-700">ajwaexotica@upi</span>
                   <span className="font-serif font-bold text-sm text-gold-600 mt-1">₹{grandTotal}</span>
                 </div>
               </div>
 
               <div className="text-xs text-cream-300 space-y-1">
-                <div>UPI ID: <strong className="text-gold-400 font-mono">finedineknl@upi</strong></div>
+                <div>UPI ID: <strong className="text-gold-400 font-mono">ajwaexotica@upi</strong></div>
                 <div className="text-[11px] text-cream-400">After payment or verification, your order is instantly sent to the kitchen.</div>
               </div>
 
@@ -647,6 +669,18 @@ export const CheckoutPage: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* Customer Onboarding & Delivery Geolocation Modal */}
+        <CustomerOnboardingModal
+          isOpen={showOnboardingModal}
+          onClose={() => setShowOnboardingModal(false)}
+          onComplete={handleOnboardingComplete}
+          initialData={{
+            name: customerName,
+            phone: customerPhone,
+            fullAddressString: deliveryAddress
+          }}
+        />
 
       </div>
     </div>

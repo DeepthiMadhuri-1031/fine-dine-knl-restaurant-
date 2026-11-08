@@ -38,11 +38,11 @@ export const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children 
             <div className="flex items-center gap-3">
               <Link to="/admin/dashboard" className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded-full bg-charcoal-800 border border-gold-500/40 text-gold-400 font-serif font-bold text-sm flex items-center justify-center">
-                  KNL
+                  AE
                 </div>
                 <div>
                   <span className="font-serif font-bold text-base tracking-wide text-cream-100 block leading-tight">
-                    FINE DINE KNL
+                    AJWA EXOTICA
                   </span>
                   <span className="text-[10px] uppercase tracking-widest text-gold-400 font-semibold block">
                     Operations Portal

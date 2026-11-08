@@ -417,7 +417,7 @@ export const RegisterPage: React.FC = () => {
                   className="mt-0.5 rounded border-charcoal-700 text-gold-500 focus:ring-0"
                 />
                 <span className="leading-relaxed">
-                  I agree to FINE DINE KNL's{' '}
+                  I agree to Ajwa Exotica's{' '}
                   <Link to="/terms" target="_blank" className="text-gold-400 underline">Terms of Dining</Link>{' '}
                   and{' '}
                   <Link to="/privacy" target="_blank" className="text-gold-400 underline">Privacy Policy</Link>.

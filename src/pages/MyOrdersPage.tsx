@@ -282,7 +282,7 @@ export const MyOrdersPage: React.FC = () => {
             <h2 className="font-serif text-2xl font-bold text-cream-100">No Orders Found</h2>
             <p className="text-sm text-cream-300">
               {orders.length === 0 
-                ? "You haven't placed any orders with FINE DINE KNL yet." 
+                ? "You haven't placed any orders with Ajwa Exotica yet." 
                 : "No orders match your selected filters."}
             </p>
             <Link
